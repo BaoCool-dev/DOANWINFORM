@@ -113,9 +113,29 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_camera_860744 {
+            get {
+                object obj = ResourceManager.GetObject("photo-camera_860744", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap politician_475264 {
             get {
                 object obj = ResourceManager.GetObject("politician_475264", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap politician_4752641 {
+            get {
+                object obj = ResourceManager.GetObject("politician_4752641", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
