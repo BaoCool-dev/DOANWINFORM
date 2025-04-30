@@ -117,65 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="id-card_6850785" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\id-card_6850785.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="presentation_5364589" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\presentation_5364589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bell_3387325" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bell_3387325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="envelope_16278346" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\envelope_16278346.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="school-exam_13523293" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\school-exam_13523293.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unlock (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unlock (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="calendar_11248925" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendar_11248925.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="photo-camera_860744" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo-camera_860744.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="politician_4752641" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\politician_4752641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="social-learning_4233528" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\social-learning_4233528.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="left-arrow_3272431" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\left-arrow_3272431.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zoom_4823194" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zoom_4823194.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="politician_475264" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\politician_475264.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="presentation_18816942" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\presentation_18816942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="engagement_17643682" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\engagement_17643682.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tool_16205471" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tool_16205471.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circle_49_164_255" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circle_49_164_255.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChatGPT_Image_Apr_30__2025__07_22_30_PM-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT_Image_Apr_30__2025__07_22_30_PM-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChatGPT_Image_Apr_30__2025__07_21_55_PM-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT_Image_Apr_30__2025__07_21_55_PM-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAQJJREFUSEvllO8NgjAUxBnBERyhMIEjOIIjuIGO4AYYoZ8dgREYgREc4XkPjqRg
+        m7TlG/6SS/jz3kHba4v/wLzkUrbSQUJ1+oyvt1FZqR3jhapWapblAfObz9iVaeTO8nRgMKwNPfqYWg5s
+        iQd/dvKYeWWsGLbFk/QB1LItHgz76DPzKWsECprdaIY0sDydmGnCSPP+fgYfOcPoN00N0pMz9yF058Lw
+        McriOiea+0Ln17Ry1fMGc65p6kqLtVDxXt9pTVJMmf+YeC6Ec+utvbQJg+Jkc0cdbcJ4mpJEmzAo2jKC
+        njZhuAYxx/RaQ9QazHBjPdE4pWdtOD3rxyTteOMVxRc60jCkH1LLnQAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

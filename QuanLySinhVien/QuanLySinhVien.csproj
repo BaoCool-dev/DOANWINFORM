@@ -88,6 +88,12 @@
     <Compile Include="HocPhi.Designer.cs">
       <DependentUpon>HocPhi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="LopCuaBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HocPhi.resx">
       <DependentUpon>HocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LopCuaBan.resx">
       <DependentUpon>LopCuaBan.cs</DependentUpon>
@@ -239,6 +248,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\left-arrow_3272431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_49_164_255.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_Apr_30__2025__07_22_30_PM-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_Apr_30__2025__07_21_55_PM-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
