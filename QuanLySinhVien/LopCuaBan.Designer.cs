@@ -28,103 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.panel_LopCuaBan = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.data_LopCuaBan = new System.Windows.Forms.DataGridView();
+            this.btn_TimKiemLopCuaBan = new Guna.UI2.WinForms.Guna2Button();
+            this.cb_HocKy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cb_NienKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel_LopCuaBan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_LopCuaBan)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
+            // panel_LopCuaBan
             // 
-            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomGradientPanel1.BorderThickness = 1;
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2DataGridView1);
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.DarkOrange;
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.LightGoldenrodYellow;
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Orange;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1053, 613);
-            this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.panel_LopCuaBan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel_LopCuaBan.BorderThickness = 1;
+            this.panel_LopCuaBan.Controls.Add(this.data_LopCuaBan);
+            this.panel_LopCuaBan.Controls.Add(this.btn_TimKiemLopCuaBan);
+            this.panel_LopCuaBan.Controls.Add(this.cb_HocKy);
+            this.panel_LopCuaBan.Controls.Add(this.label2);
+            this.panel_LopCuaBan.Controls.Add(this.cb_NienKhoa);
+            this.panel_LopCuaBan.Controls.Add(this.label1);
+            this.panel_LopCuaBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_LopCuaBan.FillColor = System.Drawing.Color.DarkOrange;
+            this.panel_LopCuaBan.FillColor2 = System.Drawing.Color.LightGoldenrodYellow;
+            this.panel_LopCuaBan.FillColor3 = System.Drawing.Color.Orange;
+            this.panel_LopCuaBan.Location = new System.Drawing.Point(0, 0);
+            this.panel_LopCuaBan.Name = "panel_LopCuaBan";
+            this.panel_LopCuaBan.Size = new System.Drawing.Size(1751, 1002);
+            this.panel_LopCuaBan.TabIndex = 0;
             // 
-            // guna2DataGridView1
+            // data_LopCuaBan
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.data_LopCuaBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(76, 130);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.RowHeadersWidth = 51;
-            this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(888, 439);
-            this.guna2DataGridView1.TabIndex = 0;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.data_LopCuaBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_LopCuaBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLop});
+            this.data_LopCuaBan.Location = new System.Drawing.Point(76, 130);
+            this.data_LopCuaBan.Name = "data_LopCuaBan";
+            this.data_LopCuaBan.RowHeadersWidth = 51;
+            this.data_LopCuaBan.RowTemplate.Height = 24;
+            this.data_LopCuaBan.Size = new System.Drawing.Size(1586, 828);
+            this.data_LopCuaBan.TabIndex = 6;
+            this.data_LopCuaBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_LopCuaBan_CellContentClick);
+            // 
+            // btn_TimKiemLopCuaBan
+            // 
+            this.btn_TimKiemLopCuaBan.Animated = true;
+            this.btn_TimKiemLopCuaBan.AutoRoundedCorners = true;
+            this.btn_TimKiemLopCuaBan.BackColor = System.Drawing.Color.Transparent;
+            this.btn_TimKiemLopCuaBan.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btn_TimKiemLopCuaBan.BorderThickness = 1;
+            this.btn_TimKiemLopCuaBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_TimKiemLopCuaBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_TimKiemLopCuaBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_TimKiemLopCuaBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_TimKiemLopCuaBan.FillColor = System.Drawing.Color.White;
+            this.btn_TimKiemLopCuaBan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_TimKiemLopCuaBan.ForeColor = System.Drawing.Color.Black;
+            this.btn_TimKiemLopCuaBan.Location = new System.Drawing.Point(707, 40);
+            this.btn_TimKiemLopCuaBan.Name = "btn_TimKiemLopCuaBan";
+            this.btn_TimKiemLopCuaBan.Size = new System.Drawing.Size(128, 44);
+            this.btn_TimKiemLopCuaBan.TabIndex = 5;
+            this.btn_TimKiemLopCuaBan.Text = "Tìm kiếm";
+            // 
+            // cb_HocKy
+            // 
+            this.cb_HocKy.AutoRoundedCorners = true;
+            this.cb_HocKy.BackColor = System.Drawing.Color.Transparent;
+            this.cb_HocKy.BorderColor = System.Drawing.Color.Black;
+            this.cb_HocKy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_HocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_HocKy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_HocKy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_HocKy.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_HocKy.ForeColor = System.Drawing.Color.Black;
+            this.cb_HocKy.ItemHeight = 30;
+            this.cb_HocKy.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III"});
+            this.cb_HocKy.Location = new System.Drawing.Point(536, 40);
+            this.cb_HocKy.Name = "cb_HocKy";
+            this.cb_HocKy.Size = new System.Drawing.Size(93, 36);
+            this.cb_HocKy.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(424, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 28);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Kỳ học:";
+            // 
+            // cb_NienKhoa
+            // 
+            this.cb_NienKhoa.AutoRoundedCorners = true;
+            this.cb_NienKhoa.BackColor = System.Drawing.Color.Transparent;
+            this.cb_NienKhoa.BorderColor = System.Drawing.Color.Black;
+            this.cb_NienKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_NienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_NienKhoa.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_NienKhoa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_NienKhoa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_NienKhoa.ForeColor = System.Drawing.Color.Black;
+            this.cb_NienKhoa.ItemHeight = 30;
+            this.cb_NienKhoa.Items.AddRange(new object[] {
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027"});
+            this.cb_NienKhoa.Location = new System.Drawing.Point(206, 40);
+            this.cb_NienKhoa.Name = "cb_NienKhoa";
+            this.cb_NienKhoa.Size = new System.Drawing.Size(140, 36);
+            this.cb_NienKhoa.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(71, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 28);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Niên khóa:";
+            // 
+            // MaLop
+            // 
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.MinimumWidth = 6;
+            this.MaLop.Name = "MaLop";
+            this.MaLop.Width = 125;
             // 
             // LopCuaBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 613);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.ClientSize = new System.Drawing.Size(1751, 1002);
+            this.Controls.Add(this.panel_LopCuaBan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LopCuaBan";
             this.Text = "LopCuaBan";
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            this.panel_LopCuaBan.ResumeLayout(false);
+            this.panel_LopCuaBan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_LopCuaBan)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panel_LopCuaBan;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_NienKhoa;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_HocKy;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button btn_TimKiemLopCuaBan;
+        private System.Windows.Forms.DataGridView data_LopCuaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
     }
 }

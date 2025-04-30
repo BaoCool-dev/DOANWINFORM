@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace QuanLySinhVien
 {
-    public partial class LopCuaBan : Form
+    public partial class DanhSachLop : Form
     {
-        public LopCuaBan()
+        public DanhSachLop()
         {
             InitializeComponent();
         }
+
         private void container(object object_form)
         {
-            if (panel_LopCuaBan.Controls.Count > 0)
-                panel_LopCuaBan.Controls.Clear();
+            if (panel_DanhSachLop.Controls.Count > 0)
+                panel_DanhSachLop.Controls.Clear();
 
             Form fm = object_form as Form;
             if (fm != null)
@@ -28,17 +29,19 @@ namespace QuanLySinhVien
                 fm.FormBorderStyle = FormBorderStyle.None;
                 fm.Dock = DockStyle.Fill;
 
-                panel_LopCuaBan.Controls.Add(fm);
-                panel_LopCuaBan.Tag = fm;
+                panel_DanhSachLop.Controls.Add(fm);
+                panel_DanhSachLop.Tag = fm;
                 fm.Show();
             }
         }
-
-
-        private void data_LopCuaBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_TroVeLopCuaBan_Click(object sender, EventArgs e)
         {
-            
-            container(new DanhSachLop());
+            container(new LopCuaBan());
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

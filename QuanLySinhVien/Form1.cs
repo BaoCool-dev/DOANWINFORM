@@ -37,27 +37,42 @@ namespace QuanLySinhVien
             }
         }
 
+        private void ResetButtonsToTransparent()
+        {
+            btn_ThongBao.FillColor = Color.Transparent;
+            btn_ThoiKhoaBieu.FillColor = Color.Transparent;
+            btn_LopCuaBan.FillColor = Color.Transparent;
+            btn_ThongTinGiangVien.FillColor = Color.Transparent;
 
+        }
         private void btn_ThongBao_Click(object sender, EventArgs e)
         {
+            ResetButtonsToTransparent();
+            btn_ThongBao.FillColor = Color.FromArgb(255, 128, 0);
             container(new ThongBao());
             labelinfor.Text = "Thông báo";
         }
 
         private void btn_ThoiKhoaBieu_Click(object sender, EventArgs e)
         {
+            ResetButtonsToTransparent();
+            btn_ThoiKhoaBieu.FillColor = Color.Goldenrod;
             container(new ThoiKhoaBieu());
             labelinfor.Text = "Thời khóa biểu";
         }
 
         private void btn_LopCuaBan_Click(object sender, EventArgs e)
         {
+            ResetButtonsToTransparent();
+            btn_LopCuaBan.FillColor= Color.Orange;
             container(new LopCuaBan());
             labelinfor.Text = "Lớp của bạn";
         }
 
         private void btn_ThongTinGiangVien_Click(object sender, EventArgs e)
         {
+            ResetButtonsToTransparent();
+            btn_ThongTinGiangVien.FillColor = Color.SandyBrown;
             container(new ThongTin_GiangVien());
             labelinfor.Text = "Thông tin giảng viên";
         }

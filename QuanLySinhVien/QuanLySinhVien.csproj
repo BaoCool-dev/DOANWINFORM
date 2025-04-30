@@ -58,6 +58,12 @@
     <Compile Include="CTXH.Designer.cs">
       <DependentUpon>CTXH.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachLop.Designer.cs">
+      <DependentUpon>DanhSachLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Diem-Sinhvien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="CTXH.resx">
       <DependentUpon>CTXH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachLop.resx">
+      <DependentUpon>DanhSachLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Diem-Sinhvien.resx">
       <DependentUpon>Diem-Sinhvien.cs</DependentUpon>
@@ -227,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo-camera_860744.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow_3272431.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
