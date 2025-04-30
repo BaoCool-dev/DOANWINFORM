@@ -134,11 +134,11 @@
             // 
             this.lblClearField.AutoSize = true;
             this.lblClearField.BackColor = System.Drawing.Color.White;
-            this.lblClearField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClearField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClearField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
             this.lblClearField.Location = new System.Drawing.Point(317, 483);
             this.lblClearField.Name = "lblClearField";
-            this.lblClearField.Size = new System.Drawing.Size(109, 25);
+            this.lblClearField.Size = new System.Drawing.Size(121, 25);
             this.lblClearField.TabIndex = 6;
             this.lblClearField.Text = "Clear fields";
             this.lblClearField.Click += new System.EventHandler(this.lblClearField_Click);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,19 +20,38 @@ namespace QuanLySinhVien
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String userName=tbUsername.Text.Trim().ToString();
-            String password=tbPassword.Text.Trim().ToString();
+            string userName = tbUsername.Text.Trim();
+            string password = tbPassword.Text.Trim();
 
-            if ( userName=="1" && password=="1")
+            string connectionString = "Data Source=DESKTOP-G8H86K3\\SQLEXPRESS;Initial Catalog=QuanLySinhVien;Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Form1 form1= new Form1();
-                this.Hide();
-                form1.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM users WHERE username = @user AND password = @pass";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@user", userName);
+                    cmd.Parameters.AddWithValue("@pass", password);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        Form1 form1 = new Form1();
+                        this.Hide();
+                        form1.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối: " + ex.Message);
+                }
             }
         }
 
