@@ -23,14 +23,14 @@ namespace QuanLySinhVien
             string userName = tbUsername.Text.Trim();
             string password = tbPassword.Text.Trim();
 
-            string connectionString = "Data Source=localhost;Initial Catalog=LAPTRINH;Persist Security Info=True;User ID=sa;Password=chibao";
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*) FROM users WHERE username = @user AND password = @pass";
+                    string query = "SELECT COUNT(*)  FROM login WHERE [user] = @user AND pass = @pass";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@user", userName);
                     cmd.Parameters.AddWithValue("@pass", password);
@@ -103,6 +103,16 @@ namespace QuanLySinhVien
         private void lblExit_mouseLeave(object sender, EventArgs e)
         {
             lblExit.Font = new Font(lblExit.Font.FontFamily, lblExit.Font.Size, FontStyle.Bold);
+        }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
