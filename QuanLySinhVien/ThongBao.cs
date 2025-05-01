@@ -13,7 +13,7 @@ namespace QuanLySinhVien
 {
     public partial class ThongBao : Form
     {
-        string connectionString = "Server=your_server_name;Database=your_database_name;Trusted_Connection=True;";
+        string connectionString = "Data Source=localhost;Initial Catalog=LAPTRINH;Persist Security Info=True;User ID=sa;Password=chibao";
         // Hoặc nếu dùng tài khoản SQL Server:
         // string connectionString = "Server=your_server_name;Database=your_database_name;User Id=your_username;Password=your_password;";
         public ThongBao()

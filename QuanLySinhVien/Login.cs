@@ -23,7 +23,7 @@ namespace QuanLySinhVien
             string userName = tbUsername.Text.Trim();
             string password = tbPassword.Text.Trim();
 
-            string connectionString = "Data Source=DESKTOP-G8H86K3\\SQLEXPRESS;Initial Catalog=QuanLySinhVien;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=LAPTRINH;Persist Security Info=True;User ID=sa;Password=chibao";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
