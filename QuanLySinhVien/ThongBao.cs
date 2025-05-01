@@ -13,19 +13,23 @@ namespace QuanLySinhVien
 {
     public partial class ThongBao : Form
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=LAPTRINH;Persist Security Info=True;User ID=sa;Password=chibao";
-        // Hoặc nếu dùng tài khoản SQL Server:
-        // string connectionString = "Server=your_server_name;Database=your_database_name;User Id=your_username;Password=your_password;";
         public ThongBao()
         {
             InitializeComponent();
+            LoadDataToGridView();
         }
 
         private void LoadDataToGridView()
         {
-            string connectionString = "Server=your_server_name;Database=your_database_name;Trusted_Connection=True;";
-            string query = "SELECT * FROM YourTableName";
-
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+            string query = @"SELECT 
+                tb.Ma,
+                lh.TenLop AS Lop,
+                tb.TieuDe,
+                tb.NoiDung,
+                tb.MucDo
+            FROM Thong_Bao tb
+            JOIN LopHoc lh ON tb.Ma = lh.MaLop";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -35,8 +39,8 @@ namespace QuanLySinhVien
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
-                    // Gán dữ liệu vào DataGridView
-                    //dataGridView1.DataSource = dataTable;
+                    data_thongbao.DataSource = dataTable;
+                    data_thongbao.Columns["Ma"].Visible = false; // Ẩn cột khóa chính
                 }
                 catch (Exception ex)
                 {
@@ -44,11 +48,14 @@ namespace QuanLySinhVien
                 }
             }
         }
+
 
         private void InsertData()
         {
-            string connectionString = "Server=your_server_name;Database=your_database_name;Trusted_Connection=True;";
-            string query = "INSERT INTO YourTableName (Column1, Column2) VALUES (@Column1, @Column2)";
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+
+            string query = @"INSERT INTO Thong_Bao (TieuDe, NoiDung, MucDo, Ma) 
+                 VALUES (@TieuDe, @NoiDung, @MucDo, @Ma)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -56,66 +63,69 @@ namespace QuanLySinhVien
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
-                    //command.Parameters.AddWithValue("@Column1", textBox1.Text);
-                    //command.Parameters.AddWithValue("@Column2", textBox2.Text);
+
+                    // Lấy giá trị mức độ từ radio button
+                    string mucDo = "";
+                    if (rbtn_Chung.Checked)
+                        mucDo = "Chung";
+                    else if (rbtn_ChuyenNganh.Checked)
+                        mucDo = "Chuyên ngành";
+                    else if (rbtn_Gap.Checked)
+                        mucDo = "Khẩn cấp";
+
+                    // Gán dữ liệu
+                    command.Parameters.AddWithValue("@TieuDe", txt_TieuDeThongBao.Text.Trim());
+                    command.Parameters.AddWithValue("@NoiDung", txt_noidungthongbao.Text.Trim());
+                    command.Parameters.AddWithValue("@MucDo", mucDo);
+                    command.Parameters.AddWithValue("@Ma", ccb_lop.SelectedValue.ToString()); // cbLop là ComboBox chứa mã lớp
 
                     command.ExecuteNonQuery();
                     MessageBox.Show("Thêm dữ liệu thành công!");
+                    LoadDataToGridView();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
+
+
         }
 
-        private void UpdateData()
-        {
-            string connectionString = "Server=your_server_name;Database=your_database_name;Trusted_Connection=True;";
-            string query = "UPDATE YourTableName SET Column1 = @Column1, Column2 = @Column2 WHERE Id = @Id";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
-                   // command.Parameters.AddWithValue("@Column1", textBox1.Text);
-                   //command.Parameters.AddWithValue("@Column2", textBox2.Text);
-                   // command.Parameters.AddWithValue("@Id", textBoxId.Text);
-
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Cập nhật dữ liệu thành công!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
-                }
-            }
-        }
 
         private void DeleteData()
         {
-            string connectionString = "Server=your_server_name;Database=your_database_name;Trusted_Connection=True;";
-            string query = "DELETE FROM YourTableName WHERE Id = @Id";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (data_thongbao.SelectedRows.Count > 0)
             {
-                try
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    //command.Parameters.AddWithValue("@Id", textBoxId.Text);
+                string ma = data_thongbao.SelectedRows[0].Cells["Ma"].Value.ToString();
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Xóa dữ liệu thành công!");
-                }
-                catch (Exception ex)
+                string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+                string query = "DELETE FROM Thong_Bao WHERE Ma = @Ma";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message);
+                    try
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@Ma", ma);
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Xóa dữ liệu thành công!");
+                        LoadDataToGridView(); // làm mới danh sách
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message);
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
+            }
         }
+
 
         private void btn_GuiThongBao_Click(object sender, EventArgs e)
         {
@@ -125,6 +135,13 @@ namespace QuanLySinhVien
         private void btn_XoaThongBao_Click(object sender, EventArgs e)
         {
             DeleteData();
+        }
+
+        private void ThongBao_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'quanLySinhVienDataSet.LopHoc' table. You can move, or remove it, as needed.
+            this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
+
         }
     }
 }
