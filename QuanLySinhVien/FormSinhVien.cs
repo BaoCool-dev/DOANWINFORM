@@ -54,22 +54,17 @@ namespace QuanLySinhVien
             labelinfor_Sinhvien.Text = "Điểm của bạn";
         }
 
-        private void btn_Congtacxahoi_Click(object sender, EventArgs e)
-        {
-            container(new CTXH());
-            labelinfor_Sinhvien.Text = "Điểm rèn luyện và Công tác xã hội";
-        }
-
-        private void btn_Hocphi_Click(object sender, EventArgs e)
-        {
-            container(new HocPhi());
-            labelinfor_Sinhvien.Text = "Học phí";
-        }
 
         private void btn_ThongTinGiangVien_Sinhvien_Click(object sender, EventArgs e)
         {
             container(new ThongTinCaNhan_SinhVien());
             labelinfor_Sinhvien.Text = "Thông tin cá nhân";
+        }
+
+        private void btn_Khac_Click(object sender, EventArgs e)
+        {
+            container(new Khac());
+            labelinfor_Sinhvien.Text = "Các mục khác";
         }
     }
 }

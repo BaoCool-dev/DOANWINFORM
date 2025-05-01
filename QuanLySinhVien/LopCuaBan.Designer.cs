@@ -30,12 +30,12 @@
         {
             this.panel_LopCuaBan = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.data_LopCuaBan = new System.Windows.Forms.DataGridView();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_TimKiemLopCuaBan = new Guna.UI2.WinForms.Guna2Button();
             this.cb_HocKy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_NienKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_LopCuaBan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_LopCuaBan)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +74,13 @@
             this.data_LopCuaBan.Size = new System.Drawing.Size(1586, 828);
             this.data_LopCuaBan.TabIndex = 6;
             this.data_LopCuaBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_LopCuaBan_CellContentClick);
+            // 
+            // MaLop
+            // 
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.MinimumWidth = 6;
+            this.MaLop.Name = "MaLop";
+            this.MaLop.Width = 125;
             // 
             // btn_TimKiemLopCuaBan
             // 
@@ -161,13 +168,6 @@
             this.label1.Size = new System.Drawing.Size(105, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Niên khóa:";
-            // 
-            // MaLop
-            // 
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.MinimumWidth = 6;
-            this.MaLop.Name = "MaLop";
-            this.MaLop.Width = 125;
             // 
             // LopCuaBan
             // 

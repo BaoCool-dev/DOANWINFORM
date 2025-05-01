@@ -1,6 +1,6 @@
 ﻿namespace QuanLySinhVien
 {
-    partial class CTXH
+    partial class Khac
     {
         /// <summary>
         /// Required designer variable.
@@ -33,27 +33,25 @@
             // 
             // guna2CustomGradientPanel1
             // 
-            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomGradientPanel1.BorderThickness = 1;
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.Tomato;
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.Gold;
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Goldenrod;
-            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.RosyBrown;
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.SeaShell;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.DarkOrange;
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Chocolate;
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Peru;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1053, 613);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1751, 1002);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            // CTXH
+            // Khac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 613);
+            this.ClientSize = new System.Drawing.Size(1751, 1002);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CTXH";
-            this.Text = "CTXH";
+            this.Name = "Khac";
+            this.Text = "Khac";
             this.ResumeLayout(false);
 
         }

@@ -30,8 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.btn_Hocphi = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_Congtacxahoi = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Khac = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Exit_Sinhvien = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThongTinGiangVien_Sinhvien = new Guna.UI2.WinForms.Guna2Button();
             this.btn_LopCuaBan_Sinhvien = new Guna.UI2.WinForms.Guna2Button();
@@ -41,7 +40,6 @@
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.labelinfor_Sinhvien = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -57,8 +55,7 @@
             this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2CustomGradientPanel1.BorderRadius = 1;
             this.guna2CustomGradientPanel1.BorderThickness = 1;
-            this.guna2CustomGradientPanel1.Controls.Add(this.btn_Hocphi);
-            this.guna2CustomGradientPanel1.Controls.Add(this.btn_Congtacxahoi);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btn_Khac);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_Exit_Sinhvien);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_ThongTinGiangVien_Sinhvien);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_LopCuaBan_Sinhvien);
@@ -73,52 +70,31 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(318, 745);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            // btn_Hocphi
+            // btn_Khac
             // 
-            this.btn_Hocphi.AutoRoundedCorners = true;
-            this.btn_Hocphi.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Hocphi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Hocphi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Hocphi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Hocphi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Hocphi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Hocphi.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Hocphi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Hocphi.ForeColor = System.Drawing.Color.Black;
-            this.btn_Hocphi.Image = global::QuanLySinhVien.Properties.Resources.presentation_18816942;
-            this.btn_Hocphi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Hocphi.Location = new System.Drawing.Point(45, 529);
-            this.btn_Hocphi.Name = "btn_Hocphi";
-            this.btn_Hocphi.Size = new System.Drawing.Size(221, 45);
-            this.btn_Hocphi.TabIndex = 12;
-            this.btn_Hocphi.Text = "Học phí";
-            this.btn_Hocphi.Click += new System.EventHandler(this.btn_Hocphi_Click);
-            // 
-            // btn_Congtacxahoi
-            // 
-            this.btn_Congtacxahoi.AutoRoundedCorners = true;
-            this.btn_Congtacxahoi.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Congtacxahoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Congtacxahoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Congtacxahoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Congtacxahoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Congtacxahoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Congtacxahoi.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Congtacxahoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_Congtacxahoi.ForeColor = System.Drawing.Color.Black;
-            this.btn_Congtacxahoi.Image = global::QuanLySinhVien.Properties.Resources.engagement_17643682;
-            this.btn_Congtacxahoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Congtacxahoi.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.btn_Congtacxahoi.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_Congtacxahoi.Location = new System.Drawing.Point(45, 462);
-            this.btn_Congtacxahoi.Name = "btn_Congtacxahoi";
-            this.btn_Congtacxahoi.Size = new System.Drawing.Size(221, 45);
-            this.btn_Congtacxahoi.TabIndex = 11;
-            this.btn_Congtacxahoi.Text = "       Điểm rèn luyện và CTXH";
-            this.btn_Congtacxahoi.Click += new System.EventHandler(this.btn_Congtacxahoi_Click);
+            this.btn_Khac.Animated = true;
+            this.btn_Khac.AutoRoundedCorners = true;
+            this.btn_Khac.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Khac.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Khac.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Khac.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Khac.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Khac.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Khac.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Khac.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_Khac.ForeColor = System.Drawing.Color.Black;
+            this.btn_Khac.Image = global::QuanLySinhVien.Properties.Resources.presentation_18816942;
+            this.btn_Khac.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_Khac.Location = new System.Drawing.Point(45, 462);
+            this.btn_Khac.Name = "btn_Khac";
+            this.btn_Khac.Size = new System.Drawing.Size(221, 45);
+            this.btn_Khac.TabIndex = 12;
+            this.btn_Khac.Text = "Khác";
+            this.btn_Khac.Click += new System.EventHandler(this.btn_Khac_Click);
             // 
             // btn_Exit_Sinhvien
             // 
+            this.btn_Exit_Sinhvien.Animated = true;
             this.btn_Exit_Sinhvien.AutoRoundedCorners = true;
             this.btn_Exit_Sinhvien.BackColor = System.Drawing.Color.Transparent;
             this.btn_Exit_Sinhvien.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -128,7 +104,7 @@
             this.btn_Exit_Sinhvien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Exit_Sinhvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_Exit_Sinhvien.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Exit_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_Exit_Sinhvien.ForeColor = System.Drawing.Color.Black;
             this.btn_Exit_Sinhvien.Location = new System.Drawing.Point(60, 670);
             this.btn_Exit_Sinhvien.Name = "btn_Exit_Sinhvien";
@@ -138,6 +114,7 @@
             // 
             // btn_ThongTinGiangVien_Sinhvien
             // 
+            this.btn_ThongTinGiangVien_Sinhvien.Animated = true;
             this.btn_ThongTinGiangVien_Sinhvien.AutoRoundedCorners = true;
             this.btn_ThongTinGiangVien_Sinhvien.BackColor = System.Drawing.Color.Transparent;
             this.btn_ThongTinGiangVien_Sinhvien.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -146,11 +123,11 @@
             this.btn_ThongTinGiangVien_Sinhvien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_ThongTinGiangVien_Sinhvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_ThongTinGiangVien_Sinhvien.FillColor = System.Drawing.Color.Transparent;
-            this.btn_ThongTinGiangVien_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThongTinGiangVien_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_ThongTinGiangVien_Sinhvien.ForeColor = System.Drawing.Color.Black;
             this.btn_ThongTinGiangVien_Sinhvien.Image = global::QuanLySinhVien.Properties.Resources.id_card_6850785;
             this.btn_ThongTinGiangVien_Sinhvien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_ThongTinGiangVien_Sinhvien.Location = new System.Drawing.Point(45, 600);
+            this.btn_ThongTinGiangVien_Sinhvien.Location = new System.Drawing.Point(45, 535);
             this.btn_ThongTinGiangVien_Sinhvien.Name = "btn_ThongTinGiangVien_Sinhvien";
             this.btn_ThongTinGiangVien_Sinhvien.Size = new System.Drawing.Size(221, 45);
             this.btn_ThongTinGiangVien_Sinhvien.TabIndex = 10;
@@ -159,6 +136,7 @@
             // 
             // btn_LopCuaBan_Sinhvien
             // 
+            this.btn_LopCuaBan_Sinhvien.Animated = true;
             this.btn_LopCuaBan_Sinhvien.AutoRoundedCorners = true;
             this.btn_LopCuaBan_Sinhvien.BackColor = System.Drawing.Color.Transparent;
             this.btn_LopCuaBan_Sinhvien.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -180,6 +158,7 @@
             // 
             // btn_ThoiKhoaBieu_Sinhvien
             // 
+            this.btn_ThoiKhoaBieu_Sinhvien.Animated = true;
             this.btn_ThoiKhoaBieu_Sinhvien.AutoRoundedCorners = true;
             this.btn_ThoiKhoaBieu_Sinhvien.BackColor = System.Drawing.Color.Transparent;
             this.btn_ThoiKhoaBieu_Sinhvien.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -188,7 +167,7 @@
             this.btn_ThoiKhoaBieu_Sinhvien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_ThoiKhoaBieu_Sinhvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_ThoiKhoaBieu_Sinhvien.FillColor = System.Drawing.Color.Transparent;
-            this.btn_ThoiKhoaBieu_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThoiKhoaBieu_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_ThoiKhoaBieu_Sinhvien.ForeColor = System.Drawing.Color.Black;
             this.btn_ThoiKhoaBieu_Sinhvien.Image = global::QuanLySinhVien.Properties.Resources.calendar_11248925;
             this.btn_ThoiKhoaBieu_Sinhvien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -201,6 +180,7 @@
             // 
             // btn_ThongBao_Sinhvien
             // 
+            this.btn_ThongBao_Sinhvien.Animated = true;
             this.btn_ThongBao_Sinhvien.AutoRoundedCorners = true;
             this.btn_ThongBao_Sinhvien.BackColor = System.Drawing.Color.Transparent;
             this.btn_ThongBao_Sinhvien.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -209,7 +189,7 @@
             this.btn_ThongBao_Sinhvien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_ThongBao_Sinhvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_ThongBao_Sinhvien.FillColor = System.Drawing.Color.Transparent;
-            this.btn_ThongBao_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThongBao_Sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_ThongBao_Sinhvien.ForeColor = System.Drawing.Color.Black;
             this.btn_ThongBao_Sinhvien.Image = global::QuanLySinhVien.Properties.Resources.bell_3387325;
             this.btn_ThongBao_Sinhvien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -254,7 +234,6 @@
             this.guna2CustomGradientPanel3.BorderRadius = 1;
             this.guna2CustomGradientPanel3.BorderThickness = 1;
             this.guna2CustomGradientPanel3.Controls.Add(this.labelinfor_Sinhvien);
-            this.guna2CustomGradientPanel3.Controls.Add(this.guna2ControlBox2);
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2ControlBox4);
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2ControlBox3);
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.Orange;
@@ -274,19 +253,6 @@
             this.labelinfor_Sinhvien.Size = new System.Drawing.Size(774, 70);
             this.labelinfor_Sinhvien.TabIndex = 4;
             this.labelinfor_Sinhvien.Text = "Thông Báo";
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.BorderThickness = 1;
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(963, 0);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(52, 29);
-            this.guna2ControlBox2.TabIndex = 5;
             // 
             // guna2ControlBox4
             // 
@@ -308,9 +274,9 @@
             this.guna2ControlBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(917, 0);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(964, 0);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.Size = new System.Drawing.Size(49, 29);
+            this.guna2ControlBox3.Size = new System.Drawing.Size(52, 29);
             this.guna2ControlBox3.TabIndex = 3;
             // 
             // guna2DragControl1
@@ -331,6 +297,7 @@
             this.Name = "FormSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSinhVien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2CustomGradientPanel3.ResumeLayout(false);
@@ -345,7 +312,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox4;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button btn_ThongBao_Sinhvien;
@@ -354,7 +320,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_ThongTinGiangVien_Sinhvien;
         private Guna.UI2.WinForms.Guna2Button btn_Exit_Sinhvien;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelinfor_Sinhvien;
-        private Guna.UI2.WinForms.Guna2Button btn_Hocphi;
-        private Guna.UI2.WinForms.Guna2Button btn_Congtacxahoi;
+        private Guna.UI2.WinForms.Guna2Button btn_Khac;
     }
 }

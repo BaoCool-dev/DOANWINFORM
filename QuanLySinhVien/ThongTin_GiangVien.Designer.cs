@@ -45,23 +45,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gb_ThongTinLienLacGiangVien = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.gb_ThanNhan = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.gp_ChuyenMon = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.gp_DanhGia = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.gp_ChuyenMon = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.gp_DanhGia = new Guna.UI2.WinForms.Guna2GroupBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -256,6 +256,51 @@
             this.gb_ThongTinLienLacGiangVien.Text = "Thông Tin Liên Lạc:";
             this.gb_ThongTinLienLacGiangVien.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(241, 285);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 28);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "Email trường:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(44, 350);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(135, 28);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Email cá nhân:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(44, 285);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 28);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "SĐT:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(44, 213);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 28);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Xã/Phường:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(44, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 28);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Huyện/Quận:";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -284,6 +329,33 @@
             this.gb_ThanNhan.Text = "Thân nhân:";
             this.gb_ThanNhan.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(21, 207);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(181, 28);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Quan hệ thân nhân:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(21, 143);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 28);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "SĐT:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(21, 78);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 28);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Họ và tên:";
+            // 
             // gp_ChuyenMon
             // 
             this.gp_ChuyenMon.BorderColor = System.Drawing.Color.Black;
@@ -303,6 +375,51 @@
             this.gp_ChuyenMon.Text = "Chuyên Môn:";
             this.gp_ChuyenMon.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(41, 334);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(86, 28);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "Chức vụ:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(41, 271);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(71, 28);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Học vị:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(41, 207);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(61, 28);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Khoa:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(39, 143);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(138, 28);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "Năm công tác:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(39, 78);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(140, 28);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Mã giảng viên:";
+            // 
             // gp_DanhGia
             // 
             this.gp_DanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -318,123 +435,6 @@
             this.gp_DanhGia.TabIndex = 2;
             this.gp_DanhGia.Text = "Đánh giá:";
             this.gp_DanhGia.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 140);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 28);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Huyện/Quận:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(44, 213);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 28);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Xã/Phường:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(44, 285);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 28);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "SĐT:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(44, 350);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(135, 28);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Email cá nhân:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(241, 285);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 28);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "Email trường:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(21, 78);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 28);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Họ và tên:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(21, 143);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 28);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "SĐT:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(21, 207);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(181, 28);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Quan hệ thân nhân:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(39, 78);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(140, 28);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "Mã giảng viên:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(39, 143);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(138, 28);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "Năm công tác:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(41, 207);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 28);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Khoa:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(41, 271);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(71, 28);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Học vị:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(41, 334);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 28);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "Chức vụ:";
             // 
             // ThongTin_GiangVien
             // 

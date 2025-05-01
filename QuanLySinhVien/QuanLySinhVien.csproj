@@ -52,12 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CTXH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CTXH.Designer.cs">
-      <DependentUpon>CTXH.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanhSachLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +76,11 @@
     <Compile Include="FormSinhVien.Designer.cs">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="HocPhi.cs">
+    <Compile Include="Khac.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HocPhi.Designer.cs">
-      <DependentUpon>HocPhi.cs</DependentUpon>
+    <Compile Include="Khac.Designer.cs">
+      <DependentUpon>Khac.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -138,9 +132,6 @@
     <Compile Include="ThongTin_GiangVien.Designer.cs">
       <DependentUpon>ThongTin_GiangVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CTXH.resx">
-      <DependentUpon>CTXH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DanhSachLop.resx">
       <DependentUpon>DanhSachLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,8 +144,8 @@
     <EmbeddedResource Include="FormSinhVien.resx">
       <DependentUpon>FormSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HocPhi.resx">
-      <DependentUpon>HocPhi.cs</DependentUpon>
+    <EmbeddedResource Include="Khac.resx">
+      <DependentUpon>Khac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLySinhVien
 {
-    public partial class CTXH : Form
+    public partial class Khac : Form
     {
-        public CTXH()
+        public Khac()
         {
             InitializeComponent();
         }
