@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btn_ChinSuaAnhSinhVien = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gb_ThongtinCaNhanGiangVien = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,24 +57,23 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.gp_DanhGia = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btn_ChinSuaAnhSinhVien = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.gb_ThongtinCaNhanGiangVien.SuspendLayout();
             this.gb_ThongTinLienLacGiangVien.SuspendLayout();
             this.gb_ThanNhan.SuspendLayout();
             this.gp_ChuyenMon.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2CustomGradientPanel2.Controls.Add(this.gp_DanhGia);
-            this.guna2CustomGradientPanel2.Controls.Add(this.gp_ChuyenMon);
-            this.guna2CustomGradientPanel2.Controls.Add(this.gb_ThanNhan);
-            this.guna2CustomGradientPanel2.Controls.Add(this.gb_ThongTinLienLacGiangVien);
-            this.guna2CustomGradientPanel2.Controls.Add(this.gb_ThongtinCaNhanGiangVien);
-            this.guna2CustomGradientPanel2.Controls.Add(this.btn_ChinSuaAnhSinhVien);
-            this.guna2CustomGradientPanel2.Controls.Add(this.guna2CirclePictureBox1);
+            this.guna2CustomGradientPanel2.Controls.Add(this.tableLayoutPanel1);
             this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.Peru;
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.Coral;
@@ -85,38 +83,33 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1751, 1002);
             this.guna2CustomGradientPanel2.TabIndex = 1;
             // 
-            // guna2CirclePictureBox1
+            // tableLayoutPanel1
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::QuanLySinhVien.Properties.Resources.student_1154987;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(106, 59);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(286, 274);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 1;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // btn_ChinSuaAnhSinhVien
-            // 
-            this.btn_ChinSuaAnhSinhVien.AutoRoundedCorners = true;
-            this.btn_ChinSuaAnhSinhVien.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ChinSuaAnhSinhVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_ChinSuaAnhSinhVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_ChinSuaAnhSinhVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_ChinSuaAnhSinhVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_ChinSuaAnhSinhVien.FillColor = System.Drawing.Color.White;
-            this.btn_ChinSuaAnhSinhVien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_ChinSuaAnhSinhVien.ForeColor = System.Drawing.Color.Black;
-            this.btn_ChinSuaAnhSinhVien.Image = global::QuanLySinhVien.Properties.Resources.photo_camera_860744;
-            this.btn_ChinSuaAnhSinhVien.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.btn_ChinSuaAnhSinhVien.ImageSize = new System.Drawing.Size(17, 17);
-            this.btn_ChinSuaAnhSinhVien.Location = new System.Drawing.Point(163, 365);
-            this.btn_ChinSuaAnhSinhVien.Name = "btn_ChinSuaAnhSinhVien";
-            this.btn_ChinSuaAnhSinhVien.Size = new System.Drawing.Size(180, 45);
-            this.btn_ChinSuaAnhSinhVien.TabIndex = 2;
-            this.btn_ChinSuaAnhSinhVien.Text = "Chỉnh sửa ảnh";
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.468745F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.30097F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.68418F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.49572F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.141759F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.90278F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.992884F));
+            this.tableLayoutPanel1.Controls.Add(this.gp_DanhGia, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.gb_ThongTinLienLacGiangVien, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gb_ThongtinCaNhanGiangVien, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gb_ThanNhan, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.gp_ChuyenMon, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.01518F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.984819F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.10978F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.08982F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1751, 1002);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gb_ThongtinCaNhanGiangVien
             // 
@@ -134,10 +127,10 @@
             this.gb_ThongtinCaNhanGiangVien.FillColor = System.Drawing.Color.Transparent;
             this.gb_ThongtinCaNhanGiangVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_ThongtinCaNhanGiangVien.ForeColor = System.Drawing.Color.Black;
-            this.gb_ThongtinCaNhanGiangVien.Location = new System.Drawing.Point(470, 44);
+            this.gb_ThongtinCaNhanGiangVien.Location = new System.Drawing.Point(501, 3);
             this.gb_ThongtinCaNhanGiangVien.Name = "gb_ThongtinCaNhanGiangVien";
-            this.gb_ThongtinCaNhanGiangVien.Size = new System.Drawing.Size(565, 450);
-            this.gb_ThongtinCaNhanGiangVien.TabIndex = 3;
+            this.gb_ThongtinCaNhanGiangVien.Size = new System.Drawing.Size(563, 450);
+            this.gb_ThongtinCaNhanGiangVien.TabIndex = 4;
             this.gb_ThongtinCaNhanGiangVien.Text = "Thông Tin Cá Nhân:";
             this.gb_ThongtinCaNhanGiangVien.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
@@ -215,6 +208,8 @@
             // 
             // gb_ThongTinLienLacGiangVien
             // 
+            this.gb_ThongTinLienLacGiangVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_ThongTinLienLacGiangVien.BackColor = System.Drawing.Color.Transparent;
             this.gb_ThongTinLienLacGiangVien.BorderColor = System.Drawing.Color.Black;
             this.gb_ThongTinLienLacGiangVien.Controls.Add(this.label14);
@@ -227,10 +222,10 @@
             this.gb_ThongTinLienLacGiangVien.FillColor = System.Drawing.Color.Transparent;
             this.gb_ThongTinLienLacGiangVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_ThongTinLienLacGiangVien.ForeColor = System.Drawing.Color.Black;
-            this.gb_ThongTinLienLacGiangVien.Location = new System.Drawing.Point(1078, 44);
+            this.gb_ThongTinLienLacGiangVien.Location = new System.Drawing.Point(1125, 3);
             this.gb_ThongTinLienLacGiangVien.Name = "gb_ThongTinLienLacGiangVien";
-            this.gb_ThongTinLienLacGiangVien.Size = new System.Drawing.Size(623, 450);
-            this.gb_ThongTinLienLacGiangVien.TabIndex = 8;
+            this.gb_ThongTinLienLacGiangVien.Size = new System.Drawing.Size(570, 450);
+            this.gb_ThongTinLienLacGiangVien.TabIndex = 9;
             this.gb_ThongTinLienLacGiangVien.Text = "Thông Tin Liên Lạc:";
             this.gb_ThongTinLienLacGiangVien.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
@@ -301,10 +296,10 @@
             this.gb_ThanNhan.FillColor = System.Drawing.Color.Transparent;
             this.gb_ThanNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_ThanNhan.ForeColor = System.Drawing.Color.Black;
-            this.gb_ThanNhan.Location = new System.Drawing.Point(42, 528);
+            this.gb_ThanNhan.Location = new System.Drawing.Point(46, 502);
             this.gb_ThanNhan.Name = "gb_ThanNhan";
-            this.gb_ThanNhan.Size = new System.Drawing.Size(369, 425);
-            this.gb_ThanNhan.TabIndex = 9;
+            this.gb_ThanNhan.Size = new System.Drawing.Size(402, 445);
+            this.gb_ThanNhan.TabIndex = 14;
             this.gb_ThanNhan.Text = "Thân nhân:";
             this.gb_ThanNhan.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
@@ -350,10 +345,10 @@
             this.gp_ChuyenMon.FillColor = System.Drawing.Color.Transparent;
             this.gp_ChuyenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gp_ChuyenMon.ForeColor = System.Drawing.Color.Black;
-            this.gp_ChuyenMon.Location = new System.Drawing.Point(470, 528);
+            this.gp_ChuyenMon.Location = new System.Drawing.Point(501, 502);
             this.gp_ChuyenMon.Name = "gp_ChuyenMon";
-            this.gp_ChuyenMon.Size = new System.Drawing.Size(492, 425);
-            this.gp_ChuyenMon.TabIndex = 10;
+            this.gp_ChuyenMon.Size = new System.Drawing.Size(563, 445);
+            this.gp_ChuyenMon.TabIndex = 15;
             this.gp_ChuyenMon.Text = "Chuyên Môn:";
             this.gp_ChuyenMon.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
@@ -412,12 +407,58 @@
             this.gp_DanhGia.FillColor = System.Drawing.Color.Transparent;
             this.gp_DanhGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gp_DanhGia.ForeColor = System.Drawing.Color.Black;
-            this.gp_DanhGia.Location = new System.Drawing.Point(1019, 528);
+            this.gp_DanhGia.Location = new System.Drawing.Point(1125, 502);
             this.gp_DanhGia.Name = "gp_DanhGia";
-            this.gp_DanhGia.Size = new System.Drawing.Size(682, 425);
-            this.gp_DanhGia.TabIndex = 13;
+            this.gp_DanhGia.Size = new System.Drawing.Size(570, 445);
+            this.gp_DanhGia.TabIndex = 14;
             this.gp_DanhGia.Text = "Đánh giá:";
             this.gp_DanhGia.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_ChinSuaAnhSinhVien);
+            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(46, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(402, 454);
+            this.panel1.TabIndex = 16;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::QuanLySinhVien.Properties.Resources.student_1154987;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 29);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(286, 274);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 2;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // btn_ChinSuaAnhSinhVien
+            // 
+            this.btn_ChinSuaAnhSinhVien.AutoRoundedCorners = true;
+            this.btn_ChinSuaAnhSinhVien.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ChinSuaAnhSinhVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_ChinSuaAnhSinhVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_ChinSuaAnhSinhVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_ChinSuaAnhSinhVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_ChinSuaAnhSinhVien.FillColor = System.Drawing.Color.White;
+            this.btn_ChinSuaAnhSinhVien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_ChinSuaAnhSinhVien.ForeColor = System.Drawing.Color.Black;
+            this.btn_ChinSuaAnhSinhVien.Image = global::QuanLySinhVien.Properties.Resources.photo_camera_860744;
+            this.btn_ChinSuaAnhSinhVien.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.btn_ChinSuaAnhSinhVien.ImageSize = new System.Drawing.Size(17, 17);
+            this.btn_ChinSuaAnhSinhVien.Location = new System.Drawing.Point(111, 350);
+            this.btn_ChinSuaAnhSinhVien.Name = "btn_ChinSuaAnhSinhVien";
+            this.btn_ChinSuaAnhSinhVien.Size = new System.Drawing.Size(180, 45);
+            this.btn_ChinSuaAnhSinhVien.TabIndex = 3;
+            this.btn_ChinSuaAnhSinhVien.Text = "Chỉnh sửa ảnh";
             // 
             // ThongTinCaNhan_SinhVien
             // 
@@ -429,7 +470,7 @@
             this.Name = "ThongTinCaNhan_SinhVien";
             this.Text = "ThongTinCaNhan_SinhVien";
             this.guna2CustomGradientPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.gb_ThongtinCaNhanGiangVien.ResumeLayout(false);
             this.gb_ThongtinCaNhanGiangVien.PerformLayout();
             this.gb_ThongTinLienLacGiangVien.ResumeLayout(false);
@@ -438,6 +479,8 @@
             this.gb_ThanNhan.PerformLayout();
             this.gp_ChuyenMon.ResumeLayout(false);
             this.gp_ChuyenMon.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,8 +488,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btn_ChinSuaAnhSinhVien;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2GroupBox gb_ThongtinCaNhanGiangVien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -474,5 +516,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2GroupBox gp_DanhGia;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btn_ChinSuaAnhSinhVien;
     }
 }

@@ -55,9 +55,8 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.DarkOrange;
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Coral;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1946, 1106);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1726, 882);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // btn_TimKiemTKBSinhVien
@@ -74,10 +73,9 @@
             this.btn_TimKiemTKBSinhVien.FillColor = System.Drawing.Color.White;
             this.btn_TimKiemTKBSinhVien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_TimKiemTKBSinhVien.ForeColor = System.Drawing.Color.Black;
-            this.btn_TimKiemTKBSinhVien.Location = new System.Drawing.Point(776, 64);
-            this.btn_TimKiemTKBSinhVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_TimKiemTKBSinhVien.Location = new System.Drawing.Point(690, 51);
             this.btn_TimKiemTKBSinhVien.Name = "btn_TimKiemTKBSinhVien";
-            this.btn_TimKiemTKBSinhVien.Size = new System.Drawing.Size(144, 55);
+            this.btn_TimKiemTKBSinhVien.Size = new System.Drawing.Size(128, 44);
             this.btn_TimKiemTKBSinhVien.TabIndex = 6;
             this.btn_TimKiemTKBSinhVien.Text = "Tìm kiếm";
             // 
@@ -97,10 +95,9 @@
             "I",
             "II",
             "III"});
-            this.cb_HocKyTKBSinhVien.Location = new System.Drawing.Point(604, 64);
-            this.cb_HocKyTKBSinhVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cb_HocKyTKBSinhVien.Location = new System.Drawing.Point(537, 51);
             this.cb_HocKyTKBSinhVien.Name = "cb_HocKyTKBSinhVien";
-            this.cb_HocKyTKBSinhVien.Size = new System.Drawing.Size(104, 36);
+            this.cb_HocKyTKBSinhVien.Size = new System.Drawing.Size(93, 36);
             this.cb_HocKyTKBSinhVien.TabIndex = 5;
             // 
             // label2
@@ -108,9 +105,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(494, 74);
+            this.label2.Location = new System.Drawing.Point(439, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 32);
+            this.label2.Size = new System.Drawing.Size(74, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Kỳ học:";
             // 
@@ -133,10 +130,9 @@
             "2025",
             "2026",
             "2027"});
-            this.cb_NamHocTKBSinhVien.Location = new System.Drawing.Point(231, 64);
-            this.cb_NamHocTKBSinhVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cb_NamHocTKBSinhVien.Location = new System.Drawing.Point(205, 51);
             this.cb_NamHocTKBSinhVien.Name = "cb_NamHocTKBSinhVien";
-            this.cb_NamHocTKBSinhVien.Size = new System.Drawing.Size(157, 36);
+            this.cb_NamHocTKBSinhVien.Size = new System.Drawing.Size(140, 36);
             this.cb_NamHocTKBSinhVien.TabIndex = 3;
             // 
             // label1
@@ -144,32 +140,33 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 74);
+            this.label1.Location = new System.Drawing.Point(78, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 32);
+            this.label1.Size = new System.Drawing.Size(95, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Năm học:";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(93, 192);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(83, 154);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1774, 928);
+            this.dataGridView1.Size = new System.Drawing.Size(1577, 671);
             this.dataGridView1.TabIndex = 0;
             // 
             // ThoiKhoaBieu_Sinhvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1946, 1106);
+            this.ClientSize = new System.Drawing.Size(1726, 882);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ThoiKhoaBieu_Sinhvien";
             this.Text = "ThoiKhoaBieu_Sinhvien";
             this.guna2CustomGradientPanel1.ResumeLayout(false);
