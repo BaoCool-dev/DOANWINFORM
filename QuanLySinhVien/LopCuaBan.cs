@@ -16,7 +16,7 @@ namespace QuanLySinhVien
         public LopCuaBan()
         {
             InitializeComponent();
-            LoadDataToGridView();   
+            LoadDataToGridView();
         }
         private void container(object object_form)
         {
@@ -69,7 +69,7 @@ namespace QuanLySinhVien
         private void LopCuaBan_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLySinhVienDataSet.LopHoc' table. You can move, or remove it, as needed.
-            this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
+            //this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
 
         }
 

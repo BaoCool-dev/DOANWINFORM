@@ -140,7 +140,7 @@ namespace QuanLySinhVien
         private void ThongBao_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLySinhVienDataSet.LopHoc' table. You can move, or remove it, as needed.
-            this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
+            //this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
 
         }
     }

@@ -16,6 +16,7 @@ namespace QuanLySinhVien
         public DanhSachLop()
         {
             InitializeComponent();
+            LoadDataToGridView();
         }
 
         private void container(object object_form)
@@ -48,7 +49,7 @@ namespace QuanLySinhVien
         private void DanhSachLop_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLySinhVienDataSet1.BangDiem_CNTT01' table. You can move, or remove it, as needed.
-            this.bangDiem_CNTT01TableAdapter.Fill(this.quanLySinhVienDataSet1.BangDiem_CNTT01);
+            //this.bangDiem_CNTT01TableAdapter.Fill(this.quanLySinhVienDataSet1.BangDiem_CNTT01);
 
         }
         private void LoadDataToGridView()
@@ -162,6 +163,11 @@ namespace QuanLySinhVien
             txt_Nganh.Clear();
             txtDiemGK.Clear();
             txtDiemCK.Clear();
+        }
+
+        private void data_bangdiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

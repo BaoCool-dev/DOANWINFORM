@@ -19,7 +19,7 @@ namespace QuanLySinhVien
         String sender_id;
         String receiver_id;
         bool flag= true;
-        private string connectionString = @"Server=DESKTOP-G8H86K3\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+        private string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
         public Messenger(String sender_id, String receiver_id)
         {
             InitializeComponent();
@@ -173,6 +173,11 @@ namespace QuanLySinhVien
         private void pb_reset_Click(object sender, EventArgs e)
         {
             LoadMessages();
+        }
+
+        private void flowLayoutPanelMessages_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
