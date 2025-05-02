@@ -44,6 +44,8 @@
             this.rbtn_Chung = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.ccb_lop = new System.Windows.Forms.ComboBox();
+            this.lopHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLySinhVienDataSet = new QuanLySinhVien.QuanLySinhVienDataSet();
             this.gb_ThongBaoGiangVien = new System.Windows.Forms.GroupBox();
             this.btn_XoaThongBao = new System.Windows.Forms.Button();
             this.data_thongbao = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -51,15 +53,13 @@
             this.txtBox_TImKiemTHongBao = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.quanLySinhVienDataSet = new QuanLySinhVien.QuanLySinhVienDataSet();
-            this.lopHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lopHocTableAdapter = new QuanLySinhVien.QuanLySinhVienDataSetTableAdapters.LopHocTableAdapter();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.gb_TacVu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).BeginInit();
             this.gb_ThongBaoGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_thongbao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -226,6 +226,16 @@
             this.ccb_lop.TabIndex = 0;
             this.ccb_lop.ValueMember = "MaLop";
             // 
+            // lopHocBindingSource
+            // 
+            this.lopHocBindingSource.DataMember = "LopHoc";
+            this.lopHocBindingSource.DataSource = this.quanLySinhVienDataSet;
+            // 
+            // quanLySinhVienDataSet
+            // 
+            this.quanLySinhVienDataSet.DataSetName = "QuanLySinhVienDataSet";
+            this.quanLySinhVienDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gb_ThongBaoGiangVien
             // 
             this.gb_ThongBaoGiangVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -287,6 +297,7 @@
             this.data_thongbao.Location = new System.Drawing.Point(26, 79);
             this.data_thongbao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.data_thongbao.Name = "data_thongbao";
+            this.data_thongbao.ReadOnly = true;
             this.data_thongbao.RowHeadersVisible = false;
             this.data_thongbao.RowHeadersWidth = 51;
             this.data_thongbao.RowTemplate.Height = 24;
@@ -305,7 +316,7 @@
             this.data_thongbao.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.data_thongbao.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data_thongbao.ThemeStyle.HeaderStyle.Height = 4;
-            this.data_thongbao.ThemeStyle.ReadOnly = false;
+            this.data_thongbao.ThemeStyle.ReadOnly = true;
             this.data_thongbao.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.data_thongbao.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_thongbao.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,16 +385,6 @@
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this.gb_TacVu;
             // 
-            // quanLySinhVienDataSet
-            // 
-            this.quanLySinhVienDataSet.DataSetName = "QuanLySinhVienDataSet";
-            this.quanLySinhVienDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lopHocBindingSource
-            // 
-            this.lopHocBindingSource.DataMember = "LopHoc";
-            this.lopHocBindingSource.DataSource = this.quanLySinhVienDataSet;
-            // 
             // lopHocTableAdapter
             // 
             this.lopHocTableAdapter.ClearBeforeFill = true;
@@ -402,10 +403,10 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.gb_TacVu.ResumeLayout(false);
             this.gb_TacVu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).EndInit();
             this.gb_ThongBaoGiangVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_thongbao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

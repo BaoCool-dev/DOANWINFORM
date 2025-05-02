@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_LopCuaBan = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.data_LopCuaBan = new System.Windows.Forms.DataGridView();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_TimKiemLopCuaBan = new Guna.UI2.WinForms.Guna2Button();
             this.cb_HocKy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_NienKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.quanLySinhVienDataSet = new QuanLySinhVien.QuanLySinhVienDataSet();
+            this.lopHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lopHocTableAdapter = new QuanLySinhVien.QuanLySinhVienDataSetTableAdapters.LopHocTableAdapter();
             this.panel_LopCuaBan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_LopCuaBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_LopCuaBan
@@ -55,8 +60,9 @@
             this.panel_LopCuaBan.FillColor2 = System.Drawing.Color.LightGoldenrodYellow;
             this.panel_LopCuaBan.FillColor3 = System.Drawing.Color.Orange;
             this.panel_LopCuaBan.Location = new System.Drawing.Point(0, 0);
+            this.panel_LopCuaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_LopCuaBan.Name = "panel_LopCuaBan";
-            this.panel_LopCuaBan.Size = new System.Drawing.Size(1751, 1002);
+            this.panel_LopCuaBan.Size = new System.Drawing.Size(1946, 1106);
             this.panel_LopCuaBan.TabIndex = 0;
             // 
             // data_LopCuaBan
@@ -65,22 +71,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data_LopCuaBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_LopCuaBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLop});
-            this.data_LopCuaBan.Location = new System.Drawing.Point(76, 130);
+            this.data_LopCuaBan.Location = new System.Drawing.Point(86, 162);
+            this.data_LopCuaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.data_LopCuaBan.Name = "data_LopCuaBan";
             this.data_LopCuaBan.RowHeadersWidth = 51;
             this.data_LopCuaBan.RowTemplate.Height = 24;
-            this.data_LopCuaBan.Size = new System.Drawing.Size(1586, 828);
+            this.data_LopCuaBan.Size = new System.Drawing.Size(1760, 889);
             this.data_LopCuaBan.TabIndex = 6;
             this.data_LopCuaBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_LopCuaBan_CellContentClick);
-            // 
-            // MaLop
-            // 
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.MinimumWidth = 6;
-            this.MaLop.Name = "MaLop";
-            this.MaLop.Width = 125;
             // 
             // btn_TimKiemLopCuaBan
             // 
@@ -96,11 +94,13 @@
             this.btn_TimKiemLopCuaBan.FillColor = System.Drawing.Color.White;
             this.btn_TimKiemLopCuaBan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_TimKiemLopCuaBan.ForeColor = System.Drawing.Color.Black;
-            this.btn_TimKiemLopCuaBan.Location = new System.Drawing.Point(707, 40);
+            this.btn_TimKiemLopCuaBan.Location = new System.Drawing.Point(795, 50);
+            this.btn_TimKiemLopCuaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_TimKiemLopCuaBan.Name = "btn_TimKiemLopCuaBan";
-            this.btn_TimKiemLopCuaBan.Size = new System.Drawing.Size(128, 44);
+            this.btn_TimKiemLopCuaBan.Size = new System.Drawing.Size(144, 55);
             this.btn_TimKiemLopCuaBan.TabIndex = 5;
             this.btn_TimKiemLopCuaBan.Text = "Tìm kiếm";
+            this.btn_TimKiemLopCuaBan.Click += new System.EventHandler(this.btn_TimKiemLopCuaBan_Click);
             // 
             // cb_HocKy
             // 
@@ -115,12 +115,13 @@
             this.cb_HocKy.ForeColor = System.Drawing.Color.Black;
             this.cb_HocKy.ItemHeight = 30;
             this.cb_HocKy.Items.AddRange(new object[] {
-            "I",
-            "II",
-            "III"});
-            this.cb_HocKy.Location = new System.Drawing.Point(536, 40);
+            "HKI",
+            "HKII",
+            "HKIII"});
+            this.cb_HocKy.Location = new System.Drawing.Point(603, 50);
+            this.cb_HocKy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_HocKy.Name = "cb_HocKy";
-            this.cb_HocKy.Size = new System.Drawing.Size(93, 36);
+            this.cb_HocKy.Size = new System.Drawing.Size(104, 36);
             this.cb_HocKy.TabIndex = 4;
             // 
             // label2
@@ -128,9 +129,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(424, 48);
+            this.label2.Location = new System.Drawing.Point(477, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 28);
+            this.label2.Size = new System.Drawing.Size(90, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Kỳ học:";
             // 
@@ -153,9 +154,10 @@
             "2025",
             "2026",
             "2027"});
-            this.cb_NienKhoa.Location = new System.Drawing.Point(206, 40);
+            this.cb_NienKhoa.Location = new System.Drawing.Point(232, 50);
+            this.cb_NienKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_NienKhoa.Name = "cb_NienKhoa";
-            this.cb_NienKhoa.Size = new System.Drawing.Size(140, 36);
+            this.cb_NienKhoa.Size = new System.Drawing.Size(157, 36);
             this.cb_NienKhoa.TabIndex = 2;
             // 
             // label1
@@ -163,24 +165,42 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 48);
+            this.label1.Location = new System.Drawing.Point(80, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 28);
+            this.label1.Size = new System.Drawing.Size(129, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Niên khóa:";
             // 
+            // quanLySinhVienDataSet
+            // 
+            this.quanLySinhVienDataSet.DataSetName = "QuanLySinhVienDataSet";
+            this.quanLySinhVienDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lopHocBindingSource
+            // 
+            this.lopHocBindingSource.DataMember = "LopHoc";
+            this.lopHocBindingSource.DataSource = this.quanLySinhVienDataSet;
+            // 
+            // lopHocTableAdapter
+            // 
+            this.lopHocTableAdapter.ClearBeforeFill = true;
+            // 
             // LopCuaBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1751, 1002);
+            this.ClientSize = new System.Drawing.Size(1946, 1106);
             this.Controls.Add(this.panel_LopCuaBan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LopCuaBan";
             this.Text = "LopCuaBan";
+            this.Load += new System.EventHandler(this.LopCuaBan_Load);
             this.panel_LopCuaBan.ResumeLayout(false);
             this.panel_LopCuaBan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_LopCuaBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,6 +214,8 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btn_TimKiemLopCuaBan;
         private System.Windows.Forms.DataGridView data_LopCuaBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
+        private QuanLySinhVienDataSet quanLySinhVienDataSet;
+        private System.Windows.Forms.BindingSource lopHocBindingSource;
+        private QuanLySinhVienDataSetTableAdapters.LopHocTableAdapter lopHocTableAdapter;
     }
 }
