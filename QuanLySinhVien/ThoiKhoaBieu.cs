@@ -18,31 +18,24 @@ namespace QuanLySinhVien
             InitializeComponent();
             LoadDataToGridView();
         }
+        private DataRow GetSelectedRow()
+        {
+            if (data_thoikhoabieu.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = data_thoikhoabieu.SelectedRows[0];
+                return ((DataRowView)selectedRow.DataBoundItem).Row;
+            }
+            return null;
+        }
         private void LoadDataToGridView()
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = @"
-        SELECT 
-            mh.TenMonHoc,
-            tkb.Thu,
-            tbd.ThoiGian AS GioBatDau,
-            tkt.ThoiGian AS GioKetThuc,
-            tkb.MaMonHoc,
-            mh.SoTinChi,
-            tkb.MaGiangVien,
-            tkb.MaPhong,
+            string query = @"SELECT mh.TenMonHoc, tkb.Thu, tbd.ThoiGian AS GioBatDau, tkt.ThoiGian AS GioKetThuc,  tkb.MaMonHoc, mh.SoTinChi,   tkb.MaGiangVien,     tkb.MaPhong,
             tkb.MaLop,
             tkb.HinhThuc,
             tkb.HocKy,
             tkb.MoTa
-        FROM 
-            ThoiKhoaBieu tkb
-        JOIN 
-            MonHoc mh ON tkb.MaMonHoc = mh.MaMonHoc
-        JOIN 
-            TietHoc tbd ON tkb.TietDau = tbd.Tiet
-        JOIN 
-            TietHoc tkt ON tkb.TietCuoi = tkt.Tiet";
+            FROM ThoiKhoaBieu tkb JOIN  MonHoc mh ON tkb.MaMonHoc = mh.MaMonHoc JOIN TietHoc tbd ON tkb.TietDau = tbd.Tiet JOIN  TietHoc tkt ON tkb.TietCuoi = tkt.Tiet";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -66,45 +59,106 @@ namespace QuanLySinhVien
 
         private void btn_chinhsua_Click(object sender, EventArgs e)
         {
+            DataRow selectedRow = GetSelectedRow();
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để sửa!");
+                return;
+            }
 
+            try
+            {
+                string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = @"UPDATE ThoiKhoaBieu 
+                            SET MaMonHoc = @MaMonHoc, 
+                                Thu = @Thu, 
+                                TietDau = @TietDau, 
+                                TietCuoi = @TietCuoi, 
+                                MaGiangVien = @MaGiangVien, 
+                                MaPhong = @MaPhong, 
+                                MaLop = @MaLop, 
+                                HinhThuc = @HinhThuc, 
+                                HocKy = @HocKy, 
+                                MoTa = @MoTa
+                            WHERE MaMonHoc = @OldMaMonHoc AND Thu = @OldThu AND TietDau = @OldTietDau";
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+
+                    // Giá trị mới từ form
+                    cmd.Parameters.AddWithValue("@MaMonHoc", txtMaMonHoc.Text);
+                    cmd.Parameters.AddWithValue("@Thu", cbThu.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@TietDau", Convert.ToInt32(txtTietDau.Text));
+                    cmd.Parameters.AddWithValue("@TietCuoi", Convert.ToInt32(txtTietCuoi.Text));
+                    cmd.Parameters.AddWithValue("@MaGiangVien", txtMaGiangVien.Text);
+                    cmd.Parameters.AddWithValue("@MaPhong", txtPhong.Text);
+                    cmd.Parameters.AddWithValue("@MaLop", txtMaLop.Text);
+                    cmd.Parameters.AddWithValue("@HinhThuc", cbHinhThuc.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@HocKy", txtHocKy.Text);
+                    cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
+
+                    // Giá trị cũ để xác định bản ghi cần sửa
+                    cmd.Parameters.AddWithValue("@OldMaMonHoc", selectedRow["MaMonHoc"]);
+                    cmd.Parameters.AddWithValue("@OldThu", selectedRow["Thu"]);
+                    cmd.Parameters.AddWithValue("@OldTietDau", selectedRow["TietDau"]);
+
+                    int result = cmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Cập nhật thành công!");
+                        LoadDataToGridView();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            DataRow selectedRow = GetSelectedRow();
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa!");
+                return;
+            }
 
-        }
-
-        private void btn_them_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = "INSERT INTO ThoiKhoaBieu ( Thu, MaMonHoc, MaGiangVien, MaPhong, MaLop, HinhThuc, MoTa, HocKy,TietDau, TietCuoi) " +
-                           "VALUES (@MaLich, @MaTiet, @Thu, @MaMonHoc, @MaGiangVien, @MaPhong, @MaLop, @HinhThuc, @MoTa, @HocKy)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand(query, connection);
+                    string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
 
-                    // Thêm các tham số với giá trị từ các control trên form
-                    //cmd.Parameters.AddWithValue("@MaLich", string.IsNullOrEmpty(txt_MaLich.Text) ? (object)DBNull.Value : txt_MaLich.Text);
-                    //cmd.Parameters.AddWithValue("@MaTiet", string.IsNullOrEmpty(txt_MaTiet.Text) ? (object)DBNull.Value : txt_MaTiet.Text);
-                    //cmd.Parameters.AddWithValue("@Thu", string.IsNullOrEmpty(txt_Thu.Text) ? (object)DBNull.Value : txt_Thu.Text);
-                    //cmd.Parameters.AddWithValue("@MaMonHoc", string.IsNullOrEmpty(txt_MaMonHoc.Text) ? (object)DBNull.Value : txt_MaMonHoc.Text);
-                    //cmd.Parameters.AddWithValue("@MaGiangVien", string.IsNullOrEmpty(txt_MaGiangVien.Text) ? (object)DBNull.Value : txt_MaGiangVien.Text);
-                    //cmd.Parameters.AddWithValue("@MaPhong", string.IsNullOrEmpty(txt_MaPhong.Text) ? (object)DBNull.Value : txt_MaPhong.Text);
-                    //cmd.Parameters.AddWithValue("@MaLop", string.IsNullOrEmpty(txt_MaLop.Text) ? (object)DBNull.Value : txt_MaLop.Text);
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
 
-                    //// Lấy giá trị từ ComboBox HinhThuc
-                    //cmd.Parameters.AddWithValue("@HinhThuc", cbo_HinhThuc.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                        string query = @"DELETE FROM ThoiKhoaBieu 
+                                WHERE MaMonHoc = @MaMonHoc AND Thu = @Thu AND TietDau = @TietDau";
 
-                    //cmd.Parameters.AddWithValue("@MoTa", string.IsNullOrEmpty(txt_MoTa.Text) ? (object)DBNull.Value : txt_MoTa.Text);
-                    //cmd.Parameters.AddWithValue("@HocKy", string.IsNullOrEmpty(txt_HocKy.Text) ? (object)DBNull.Value : txt_HocKy.Text);
+                        SqlCommand cmd = new SqlCommand(query, connection);
 
-                    //cmd.ExecuteNonQuery();
-                    //MessageBox.Show("Thêm thành công!");
-                    LoadDataToGridView(); // Gọi hàm load lại dữ liệu vào DataGridView
+                        cmd.Parameters.AddWithValue("@MaMonHoc", selectedRow["MaMonHoc"]);
+                        cmd.Parameters.AddWithValue("@Thu", selectedRow["Thu"]);
+                        cmd.Parameters.AddWithValue("@TietDau", selectedRow["TietDau"]);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Xóa thành công!");
+                            LoadDataToGridView();
+                            ResetForm();
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -113,9 +167,69 @@ namespace QuanLySinhVien
             }
         }
 
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = @"INSERT INTO ThoiKhoaBieu 
+                            (MaMonHoc, Thu, TietDau, TietCuoi, MaGiangVien, MaPhong, MaLop, HinhThuc, HocKy, MoTa)
+                            VALUES 
+                            (@MaMonHoc, @Thu, @TietDau, @TietCuoi, @MaGiangVien, @MaPhong, @MaLop, @HinhThuc, @HocKy, @MoTa)";
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+
+                    // Lấy giá trị từ các control trên form
+                    cmd.Parameters.AddWithValue("@MaMonHoc", txtMaMonHoc.Text);
+                    cmd.Parameters.AddWithValue("@Thu", cbThu.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@TietDau", Convert.ToInt32(txtTietDau.Text));
+                    cmd.Parameters.AddWithValue("@TietCuoi", Convert.ToInt32(txtTietCuoi.Text));
+                    cmd.Parameters.AddWithValue("@MaGiangVien", txtMaGiangVien.Text);
+                    cmd.Parameters.AddWithValue("@MaPhong", txtPhong.Text);
+                    cmd.Parameters.AddWithValue("@MaLop", txtMaLop.Text);
+                    cmd.Parameters.AddWithValue("@HinhThuc", cbHinhThuc.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@HocKy", txtHocKy.Text);
+                    cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
+
+                    int result = cmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thành công!");
+                        LoadDataToGridView(); // Tải lại dữ liệu
+                        ResetForm(); // Làm mới form
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+
+        private void ResetForm()
+        {
+            // Làm trống tất cả các control nhập liệu
+            txtMaMonHoc.Text = "";
+            cbThu.SelectedIndex = -1;
+            txtTietDau.Text = "";
+            txtTietCuoi.Text = "";
+            txtMaGiangVien.Text = "";
+            txtPhong.Text = "";
+            txtMaLop.Text = "";
+            cbHinhThuc.SelectedIndex = -1;
+            txtHocKy.Text = "";
+            txtMoTa.Text = "";
+        }
         private void btn_clear_Click(object sender, EventArgs e)
         {
-
+            ResetForm();
         }
 
         private void ThoiKhoaBieu_Load(object sender, EventArgs e)
