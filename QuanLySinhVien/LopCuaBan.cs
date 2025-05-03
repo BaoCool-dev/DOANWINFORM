@@ -62,8 +62,15 @@ namespace QuanLySinhVien
 
         private void data_LopCuaBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            container(new DanhSachLop());
+            string MaLop;
+            if (e.RowIndex >= 0) // Kiểm tra không phải header
+            {
+                DataGridViewRow row = data_LopCuaBan.Rows[e.RowIndex];
+
+                // Ví dụ: lấy dữ liệu cột 0 và cột 1
+                MaLop = row.Cells[0].Value.ToString();
+                container(new DanhSachLop(MaLop));
+            }
         }
 
         private void LopCuaBan_Load(object sender, EventArgs e)

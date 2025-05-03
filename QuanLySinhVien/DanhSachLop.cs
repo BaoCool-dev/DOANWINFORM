@@ -13,8 +13,10 @@ namespace QuanLySinhVien
 {
     public partial class DanhSachLop : Form
     {
-        public DanhSachLop()
+        string MaLop;
+        public DanhSachLop(string Malop)
         {
+            MaLop = Malop;
             InitializeComponent();
             LoadDataToGridView();
         }
@@ -55,7 +57,7 @@ namespace QuanLySinhVien
         private void LoadDataToGridView()
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = @"SELECT * From BangDiem_CNTT01 ";
+            string query = @"SELECT * From BangDiem_" + MaLop;
              
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -79,7 +81,7 @@ namespace QuanLySinhVien
         private void btn_them_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = "INSERT INTO BangDiem_CNTT01 (Hoten, MaSinhVien, Nganh, DiemGK, DiemCK) VALUES (@Hoten, @MaSinhVien, @Nganh, @DiemGK, @DiemCK)";
+            string query = "INSERT INTO BangDiem_"+MaLop+" (Hoten, MaSinhVien, Nganh, DiemGK, DiemCK) VALUES (@Hoten, @MaSinhVien, @Nganh, @DiemGK, @DiemCK)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -107,7 +109,7 @@ namespace QuanLySinhVien
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = "DELETE FROM BangDiem_CNTT01 WHERE MaSinhVien = @MaSinhVien";
+            string query = "DELETE FROM BangDiem_"+ MaLop +" WHERE MaSinhVien = @MaSinhVien";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -131,7 +133,7 @@ namespace QuanLySinhVien
         private void btn_chinhsua_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = "UPDATE BangDiem_CNTT01 SET Hoten = @Hoten, Nganh = @Nganh, DiemGK = @DiemGK, DiemCK = @DiemCK WHERE MaSinhVien = @MaSinhVien";
+            string query = "UPDATE BangDiem_"+ MaLop +" SET Hoten = @Hoten, Nganh = @Nganh, DiemGK = @DiemGK, DiemCK = @DiemCK WHERE MaSinhVien = @MaSinhVien";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
