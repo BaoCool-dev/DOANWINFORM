@@ -13,10 +13,12 @@ namespace QuanLySinhVien
 {
     public partial class LopCuaBan : Form
     {
-        public LopCuaBan()
+        string position;
+        public LopCuaBan(string position)
         {
             InitializeComponent();
             LoadDataToGridView();
+            this.position = position;
         }
         private void container(object object_form)
         {
@@ -39,7 +41,7 @@ namespace QuanLySinhVien
         private void LoadDataToGridView()
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = @"SELECT * From LopHoc";
+            string query = @"SELECT * From Thông_Tin_Lớp_Học";
           
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -67,9 +69,9 @@ namespace QuanLySinhVien
             {
                 DataGridViewRow row = data_LopCuaBan.Rows[e.RowIndex];
 
-                // Ví dụ: lấy dữ liệu cột 0 và cột 1
+                // Ví dụ: lấy dữ liệu cột 0
                 MaLop = row.Cells[0].Value.ToString();
-                container(new DanhSachLop(MaLop));
+                container(new DanhSachLop(MaLop,position));
             }
         }
 

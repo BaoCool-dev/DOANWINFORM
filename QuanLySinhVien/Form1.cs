@@ -12,11 +12,14 @@ namespace QuanLySinhVien
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string position;
+        public Form1(string position)
         {
+            this.position = position;
             InitializeComponent();
-            container(new ThongBao());
+            container(new ThongBao(position));
             labelinfor.Text = "Thông báo";
+
         }
 
         private void container(object object_form)
@@ -49,7 +52,7 @@ namespace QuanLySinhVien
         {
             ResetButtonsToTransparent();
             btn_ThongBao.FillColor = Color.FromArgb(255, 128, 0);
-            container(new ThongBao());
+            container(new ThongBao(position));
             labelinfor.Text = "Thông báo";
         }
 
@@ -57,7 +60,7 @@ namespace QuanLySinhVien
         {
             ResetButtonsToTransparent();
             btn_ThoiKhoaBieu.FillColor = Color.Goldenrod;
-            container(new ThoiKhoaBieu());
+            container(new ThoiKhoaBieu(position));
             labelinfor.Text = "Thời khóa biểu";
         }
 
@@ -65,7 +68,7 @@ namespace QuanLySinhVien
         {
             ResetButtonsToTransparent();
             btn_LopCuaBan.FillColor= Color.Orange;
-            container(new LopCuaBan());
+            container(new LopCuaBan(position));
             labelinfor.Text = "Lớp của bạn";
         }
 
@@ -73,8 +76,17 @@ namespace QuanLySinhVien
         {
             ResetButtonsToTransparent();
             btn_ThongTinGiangVien.FillColor = Color.SandyBrown;
-            container(new ThongTin_GiangVien());
+            container(new ThongTin_GiangVien(position));
             labelinfor.Text = "Thông tin giảng viên";
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            login login = new login();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }

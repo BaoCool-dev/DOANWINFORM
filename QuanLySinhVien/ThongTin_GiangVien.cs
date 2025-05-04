@@ -12,9 +12,16 @@ namespace QuanLySinhVien
 {
     public partial class ThongTin_GiangVien : Form
     {
-        public ThongTin_GiangVien()
+        string position;
+        public ThongTin_GiangVien(string position)
         {
             InitializeComponent();
+            this.position = position;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

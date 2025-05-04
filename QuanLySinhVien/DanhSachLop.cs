@@ -13,12 +13,14 @@ namespace QuanLySinhVien
 {
     public partial class DanhSachLop : Form
     {
+        string position;
         string MaLop;
-        public DanhSachLop(string Malop)
+        public DanhSachLop(string Malop, string position)
         {
             MaLop = Malop;
             InitializeComponent();
             LoadDataToGridView();
+            this.position = position;
         }
 
         private void container(object object_form)
@@ -40,7 +42,7 @@ namespace QuanLySinhVien
         }
         private void btn_TroVeLopCuaBan_Click(object sender, EventArgs e)
         {
-            container(new LopCuaBan());
+            container(new LopCuaBan(position));
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

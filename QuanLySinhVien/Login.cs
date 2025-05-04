@@ -30,18 +30,37 @@ namespace QuanLySinhVien
                 try
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*)  FROM login WHERE [user] = @user AND pass = @pass";
+                    string query = "SELECT COUNT(*)  FROM login WHERE user_ = @user AND pass_ = @pass";
+                    
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    
                     cmd.Parameters.AddWithValue("@user", userName);
                     cmd.Parameters.AddWithValue("@pass", password);
 
                     int count = (int)cmd.ExecuteScalar();
                     if (count > 0)
                     {
-                        Form1 form1 = new Form1();
-                        this.Hide();
-                        form1.ShowDialog();
-                        this.Close();
+                        string query_position = "SELECT ID FROM login WHERE user_ = @user AND pass_ = @pass";
+                        SqlCommand cmd1 = new SqlCommand(query_position, conn);
+                        cmd1.Parameters.AddWithValue("@user", userName);
+                        cmd1.Parameters.AddWithValue("@pass", password);
+                        string position = (string)cmd1.ExecuteScalar();
+                        if (position.StartsWith("GV"))
+                        {
+                            Form1 form1 = new Form1(position);
+                            this.Hide();
+                            form1.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            FormSinhVien form1 = new FormSinhVien();
+                            this.Hide();
+                            form1.ShowDialog();
+                            this.Close();
+                        }
+
+
                     }
                     else
                     {

@@ -13,10 +13,12 @@ namespace QuanLySinhVien
 {
     public partial class ThongBao : Form
     {
-        public ThongBao()
+        string position;
+        public ThongBao(string position)
         {
             InitializeComponent();
             LoadDataToGridView();
+            this.position = position;
         }
 
         private void LoadDataToGridView()

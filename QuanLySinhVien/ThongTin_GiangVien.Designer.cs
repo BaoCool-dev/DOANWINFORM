@@ -81,7 +81,6 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.SandyBrown;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.guna2GroupBox1);
@@ -128,6 +127,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Chỉnh sửa ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -251,7 +251,7 @@
             this.gb_ThongTinLienLacGiangVien.ForeColor = System.Drawing.Color.Black;
             this.gb_ThongTinLienLacGiangVien.Location = new System.Drawing.Point(1046, 3);
             this.gb_ThongTinLienLacGiangVien.Name = "gb_ThongTinLienLacGiangVien";
-            this.gb_ThongTinLienLacGiangVien.Size = new System.Drawing.Size(661, 450);
+            this.gb_ThongTinLienLacGiangVien.Size = new System.Drawing.Size(618, 450);
             this.gb_ThongTinLienLacGiangVien.TabIndex = 1;
             this.gb_ThongTinLienLacGiangVien.Text = "Thông Tin Liên Lạc:";
             this.gb_ThongTinLienLacGiangVien.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -431,7 +431,7 @@
             this.gp_DanhGia.ForeColor = System.Drawing.Color.Black;
             this.gp_DanhGia.Location = new System.Drawing.Point(907, 459);
             this.gp_DanhGia.Name = "gp_DanhGia";
-            this.gp_DanhGia.Size = new System.Drawing.Size(800, 450);
+            this.gp_DanhGia.Size = new System.Drawing.Size(757, 450);
             this.gp_DanhGia.TabIndex = 2;
             this.gp_DanhGia.Text = "Đánh giá:";
             this.gp_DanhGia.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;

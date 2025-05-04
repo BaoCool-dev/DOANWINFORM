@@ -13,10 +13,13 @@ namespace QuanLySinhVien
 {
     public partial class ThoiKhoaBieu : Form
     {
-        public ThoiKhoaBieu()
+        string position;
+        public ThoiKhoaBieu(string position)
         {
             InitializeComponent();
+            this.position = position;
             LoadDataToGridView();
+            
         }
         private DataRow GetSelectedRow()
         {
@@ -30,19 +33,29 @@ namespace QuanLySinhVien
         private void LoadDataToGridView()
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = @"SELECT mh.TenMonHoc, tkb.Thu, tbd.ThoiGian AS GioBatDau, tkt.ThoiGian AS GioKetThuc,  tkb.MaMonHoc, mh.SoTinChi,   tkb.MaGiangVien,     tkb.MaPhong,
-            tkb.MaLop,
-            tkb.HinhThuc,
-            tkb.HocKy,
-            tkb.MoTa
-            FROM ThoiKhoaBieu tkb JOIN  MonHoc mh ON tkb.MaMonHoc = mh.MaMonHoc JOIN TietHoc tbd ON tkb.TietDau = tbd.Tiet JOIN  TietHoc tkt ON tkb.TietCuoi = tkt.Tiet";
+            string query = @"
+        SELECT 
+            mh.Tên_Môn,
+            mh.Mã_Môn,
+            tkb.Phòng,
+            tkb.Thứ,
+            tkb.Buổi,
+            tkb.Hình_Thức,
+            tkb.Chú_ý,
+            tkb.Lớp
+        FROM Thời_Khóa_Biểu tkb 
+        JOIN Thông_Tin_Môn_Học mh ON tkb.Môn_Học = mh.Mã_Môn
+        WHERE mh.Mã_Giáo_Viên = @MaGV";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@MaGV", position);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
@@ -90,16 +103,16 @@ namespace QuanLySinhVien
                     SqlCommand cmd = new SqlCommand(query, connection);
 
                     // Giá trị mới từ form
-                    cmd.Parameters.AddWithValue("@MaMonHoc", txtMaMonHoc.Text);
-                    cmd.Parameters.AddWithValue("@Thu", cbThu.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@TietDau", Convert.ToInt32(txtTietDau.Text));
-                    cmd.Parameters.AddWithValue("@TietCuoi", Convert.ToInt32(txtTietCuoi.Text));
-                    cmd.Parameters.AddWithValue("@MaGiangVien", txtMaGiangVien.Text);
-                    cmd.Parameters.AddWithValue("@MaPhong", txtPhong.Text);
-                    cmd.Parameters.AddWithValue("@MaLop", txtMaLop.Text);
-                    cmd.Parameters.AddWithValue("@HinhThuc", cbHinhThuc.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@HocKy", txtHocKy.Text);
-                    cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
+                    //cmd.Parameters.AddWithValue("@MaMonHoc", txtMaMonHoc.Text);
+                    //cmd.Parameters.AddWithValue("@Thu", cbThu.SelectedValue.ToString());
+                    //cmd.Parameters.AddWithValue("@TietDau", Convert.ToInt32(txtTietDau.Text));
+                    //cmd.Parameters.AddWithValue("@TietCuoi", Convert.ToInt32(txtTietCuoi.Text));
+                    //cmd.Parameters.AddWithValue("@MaGiangVien", txtMaGiangVien.Text);
+                    //cmd.Parameters.AddWithValue("@MaPhong", txtPhong.Text);
+                    //cmd.Parameters.AddWithValue("@MaLop", txtMaLop.Text);
+                    //cmd.Parameters.AddWithValue("@HinhThuc", cbHinhThuc.SelectedValue.ToString());
+                    //cmd.Parameters.AddWithValue("@HocKy", txtHocKy.Text);
+                    //cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
 
                     // Giá trị cũ để xác định bản ghi cần sửa
                     cmd.Parameters.AddWithValue("@OldMaMonHoc", selectedRow["MaMonHoc"]);
@@ -185,16 +198,16 @@ namespace QuanLySinhVien
                     SqlCommand cmd = new SqlCommand(query, connection);
 
                     // Lấy giá trị từ các control trên form
-                    cmd.Parameters.AddWithValue("@MaMonHoc", txtMaMonHoc.Text);
-                    cmd.Parameters.AddWithValue("@Thu", cbThu.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@TietDau", Convert.ToInt32(txtTietDau.Text));
-                    cmd.Parameters.AddWithValue("@TietCuoi", Convert.ToInt32(txtTietCuoi.Text));
-                    cmd.Parameters.AddWithValue("@MaGiangVien", txtMaGiangVien.Text);
-                    cmd.Parameters.AddWithValue("@MaPhong", txtPhong.Text);
-                    cmd.Parameters.AddWithValue("@MaLop", txtMaLop.Text);
-                    cmd.Parameters.AddWithValue("@HinhThuc", cbHinhThuc.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@HocKy", txtHocKy.Text);
-                    cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
+                    //cmd.Parameters.AddWithValue("@MaMonHoc", txtMaMonHoc.Text);
+                    //cmd.Parameters.AddWithValue("@Thu", cbThu.SelectedValue.ToString());
+                    //cmd.Parameters.AddWithValue("@TietDau", Convert.ToInt32(txtTietDau.Text));
+                    //cmd.Parameters.AddWithValue("@TietCuoi", Convert.ToInt32(txtTietCuoi.Text));
+                    //cmd.Parameters.AddWithValue("@MaGiangVien", txtMaGiangVien.Text);
+                    //cmd.Parameters.AddWithValue("@MaPhong", txtPhong.Text);
+                    //cmd.Parameters.AddWithValue("@MaLop", txtMaLop.Text);
+                    //cmd.Parameters.AddWithValue("@HinhThuc", cbHinhThuc.SelectedValue.ToString());
+                    //cmd.Parameters.AddWithValue("@HocKy", txtHocKy.Text);
+                    //cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
 
                     int result = cmd.ExecuteNonQuery();
 
@@ -216,16 +229,16 @@ namespace QuanLySinhVien
         private void ResetForm()
         {
             // Làm trống tất cả các control nhập liệu
-            txtMaMonHoc.Text = "";
-            cbThu.SelectedIndex = -1;
-            txtTietDau.Text = "";
-            txtTietCuoi.Text = "";
-            txtMaGiangVien.Text = "";
-            txtPhong.Text = "";
-            txtMaLop.Text = "";
-            cbHinhThuc.SelectedIndex = -1;
-            txtHocKy.Text = "";
-            txtMoTa.Text = "";
+            //txtMaMonHoc.Text = "";
+            //cbThu.SelectedIndex = -1;
+            //txtTietDau.Text = "";
+            //txtTietCuoi.Text = "";
+            //txtMaGiangVien.Text = "";
+            //txtPhong.Text = "";
+            //txtMaLop.Text = "";
+            //cbHinhThuc.SelectedIndex = -1;
+            //txtHocKy.Text = "";
+            //txtMoTa.Text = "";
         }
         private void btn_clear_Click(object sender, EventArgs e)
         {
