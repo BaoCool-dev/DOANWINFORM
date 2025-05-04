@@ -54,7 +54,7 @@ namespace QuanLySinhVien
                         }
                         else
                         {
-                            FormSinhVien form1 = new FormSinhVien();
+                            FormSinhVien form1 = new FormSinhVien("");
                             this.Hide();
                             form1.ShowDialog();
                             this.Close();

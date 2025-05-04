@@ -18,7 +18,8 @@ namespace QuanLySinhVien
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new login());
             //Application.Run(new Messenger("002", "001"));
-            Application.Run(new login());
+            Application.Run(new FormSinhVien("SV003"));
+
 
 
         }
