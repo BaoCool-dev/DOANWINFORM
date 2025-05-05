@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.gb_TacVu = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,22 +44,27 @@
             this.rbtn_Chung = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.ccb_lop = new System.Windows.Forms.ComboBox();
-            this.lopHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLySinhVienDataSet = new QuanLySinhVien.QuanLySinhVienDataSet();
+            this.thôngTinLớpHọcBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLySinhVienDataSet2 = new QuanLySinhVien.QuanLySinhVienDataSet2();
             this.gb_ThongBaoGiangVien = new System.Windows.Forms.GroupBox();
             this.btn_XoaThongBao = new System.Windows.Forms.Button();
             this.data_thongbao = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btn_timkiem = new Guna.UI2.WinForms.Guna2CircleButton();
             this.txtBox_TImKiemTHongBao = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lopHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLySinhVienDataSet = new QuanLySinhVien.QuanLySinhVienDataSet();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lopHocTableAdapter = new QuanLySinhVien.QuanLySinhVienDataSetTableAdapters.LopHocTableAdapter();
+            this.thông_Tin_Lớp_HọcTableAdapter = new QuanLySinhVien.QuanLySinhVienDataSet2TableAdapters.Thông_Tin_Lớp_HọcTableAdapter();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.gb_TacVu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thôngTinLớpHọcBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet2)).BeginInit();
             this.gb_ThongBaoGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_thongbao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -68,7 +73,7 @@
             this.guna2CustomGradientPanel1.BorderThickness = 1;
             this.guna2CustomGradientPanel1.Controls.Add(this.gb_TacVu);
             this.guna2CustomGradientPanel1.Controls.Add(this.gb_ThongBaoGiangVien);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CircleButton1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btn_timkiem);
             this.guna2CustomGradientPanel1.Controls.Add(this.txtBox_TImKiemTHongBao);
             this.guna2CustomGradientPanel1.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -215,8 +220,8 @@
             // 
             // ccb_lop
             // 
-            this.ccb_lop.DataSource = this.lopHocBindingSource;
-            this.ccb_lop.DisplayMember = "TenLop";
+            this.ccb_lop.DataSource = this.thôngTinLớpHọcBindingSource;
+            this.ccb_lop.DisplayMember = "Tên_Lớp";
             this.ccb_lop.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ccb_lop.FormattingEnabled = true;
             this.ccb_lop.Location = new System.Drawing.Point(183, 75);
@@ -224,17 +229,17 @@
             this.ccb_lop.Name = "ccb_lop";
             this.ccb_lop.Size = new System.Drawing.Size(274, 36);
             this.ccb_lop.TabIndex = 0;
-            this.ccb_lop.ValueMember = "MaLop";
+            this.ccb_lop.ValueMember = "ID";
             // 
-            // lopHocBindingSource
+            // thôngTinLớpHọcBindingSource
             // 
-            this.lopHocBindingSource.DataMember = "LopHoc";
-            this.lopHocBindingSource.DataSource = this.quanLySinhVienDataSet;
+            this.thôngTinLớpHọcBindingSource.DataMember = "Thông_Tin_Lớp_Học";
+            this.thôngTinLớpHọcBindingSource.DataSource = this.quanLySinhVienDataSet2;
             // 
-            // quanLySinhVienDataSet
+            // quanLySinhVienDataSet2
             // 
-            this.quanLySinhVienDataSet.DataSetName = "QuanLySinhVienDataSet";
-            this.quanLySinhVienDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.quanLySinhVienDataSet2.DataSetName = "QuanLySinhVienDataSet2";
+            this.quanLySinhVienDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gb_ThongBaoGiangVien
             // 
@@ -270,29 +275,29 @@
             // 
             // data_thongbao
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.data_thongbao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.data_thongbao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.data_thongbao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_thongbao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_thongbao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.data_thongbao.ColumnHeadersHeight = 4;
             this.data_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_thongbao.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_thongbao.DefaultCellStyle = dataGridViewCellStyle6;
             this.data_thongbao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_thongbao.Location = new System.Drawing.Point(26, 79);
             this.data_thongbao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -325,26 +330,27 @@
             this.data_thongbao.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_thongbao.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2CircleButton1
+            // btn_timkiem
             // 
-            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = global::QuanLySinhVien.Properties.Resources.envelope_16278346;
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(842, 26);
-            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(93, 100);
-            this.guna2CircleButton1.TabIndex = 1;
+            this.btn_timkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_timkiem.BackColor = System.Drawing.Color.Transparent;
+            this.btn_timkiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_timkiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_timkiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_timkiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_timkiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_timkiem.FillColor = System.Drawing.Color.Transparent;
+            this.btn_timkiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_timkiem.ForeColor = System.Drawing.Color.White;
+            this.btn_timkiem.Image = global::QuanLySinhVien.Properties.Resources.envelope_16278346;
+            this.btn_timkiem.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_timkiem.Location = new System.Drawing.Point(842, 26);
+            this.btn_timkiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_timkiem.Name = "btn_timkiem";
+            this.btn_timkiem.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btn_timkiem.Size = new System.Drawing.Size(93, 100);
+            this.btn_timkiem.TabIndex = 1;
+            this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
             // txtBox_TImKiemTHongBao
             // 
@@ -375,6 +381,16 @@
             this.txtBox_TImKiemTHongBao.Size = new System.Drawing.Size(721, 60);
             this.txtBox_TImKiemTHongBao.TabIndex = 0;
             // 
+            // lopHocBindingSource
+            // 
+            this.lopHocBindingSource.DataMember = "LopHoc";
+            this.lopHocBindingSource.DataSource = this.quanLySinhVienDataSet;
+            // 
+            // quanLySinhVienDataSet
+            // 
+            this.quanLySinhVienDataSet.DataSetName = "QuanLySinhVienDataSet";
+            this.quanLySinhVienDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
@@ -388,6 +404,10 @@
             // lopHocTableAdapter
             // 
             this.lopHocTableAdapter.ClearBeforeFill = true;
+            // 
+            // thông_Tin_Lớp_HọcTableAdapter
+            // 
+            this.thông_Tin_Lớp_HọcTableAdapter.ClearBeforeFill = true;
             // 
             // ThongBao
             // 
@@ -403,10 +423,12 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.gb_TacVu.ResumeLayout(false);
             this.gb_TacVu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thôngTinLớpHọcBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet2)).EndInit();
             this.gb_ThongBaoGiangVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_thongbao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopHocBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,7 +437,7 @@
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2TextBox txtBox_TImKiemTHongBao;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton btn_timkiem;
         private System.Windows.Forms.GroupBox gb_ThongBaoGiangVien;
         public System.Windows.Forms.GroupBox gb_TacVu;
         private Guna.UI2.WinForms.Guna2DataGridView data_thongbao;
@@ -435,5 +457,8 @@
         private QuanLySinhVienDataSet quanLySinhVienDataSet;
         private System.Windows.Forms.BindingSource lopHocBindingSource;
         private QuanLySinhVienDataSetTableAdapters.LopHocTableAdapter lopHocTableAdapter;
+        private QuanLySinhVienDataSet2 quanLySinhVienDataSet2;
+        private System.Windows.Forms.BindingSource thôngTinLớpHọcBindingSource;
+        private QuanLySinhVienDataSet2TableAdapters.Thông_Tin_Lớp_HọcTableAdapter thông_Tin_Lớp_HọcTableAdapter;
     }
 }

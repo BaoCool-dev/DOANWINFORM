@@ -21,43 +21,42 @@ namespace QuanLySinhVien
             this.position = position;
         }
 
-        private void LoadDataToGridView()
-        {
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = @"SELECT 
-                tb.Ma,
-                lh.TenLop AS Lop,
-                tb.TieuDe,
-                tb.NoiDung,
-                tb.MucDo
-            FROM Thong_Bao tb
-            JOIN LopHoc lh ON tb.Ma = lh.MaLop";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            private void LoadDataToGridView()
             {
-                try
+                string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+                string query = @"SELECT 
+                    tb.id,
+                    lh.Tên_Lớp AS Lớp,
+                    tb.Tiêu_Đề,
+                    tb.Nội_Dung,
+                    tb.Mức_Độ
+                FROM Thông_Báo tb
+                JOIN Thông_Tin_Lớp_Học lh ON tb.Lớp = lh.ID";
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
+                    try
+                    {
+                        connection.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
 
-                    data_thongbao.DataSource = dataTable;
-                    data_thongbao.Columns["Ma"].Visible = false; // Ẩn cột khóa chính
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
+                        data_thongbao.DataSource = dataTable;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message);
+                    }
                 }
             }
-        }
 
 
         private void InsertData()
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
 
-            string query = @"INSERT INTO Thong_Bao (TieuDe, NoiDung, MucDo, Ma) 
-                 VALUES (@TieuDe, @NoiDung, @MucDo, @Ma)";
+            string query = @"INSERT INTO Thông_Báo (Tiêu_Đề, Nội_Dung, Mức_Độ, Lớp) 
+                 VALUES (@Tiêu_Đề, @Nội_Dung, @Mức_Độ, @Lớp)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -76,10 +75,10 @@ namespace QuanLySinhVien
                         mucDo = "Khẩn cấp";
 
                     // Gán dữ liệu
-                    command.Parameters.AddWithValue("@TieuDe", txt_TieuDeThongBao.Text.Trim());
-                    command.Parameters.AddWithValue("@NoiDung", txt_noidungthongbao.Text.Trim());
-                    command.Parameters.AddWithValue("@MucDo", mucDo);
-                    command.Parameters.AddWithValue("@Ma", ccb_lop.SelectedValue.ToString()); // cbLop là ComboBox chứa mã lớp
+                    command.Parameters.AddWithValue("@Tiêu_Đề", txt_TieuDeThongBao.Text.Trim());
+                    command.Parameters.AddWithValue("@Nội_Dung", txt_noidungthongbao.Text.Trim());
+                    command.Parameters.AddWithValue("@Mức_ĐỘ", mucDo);
+                    command.Parameters.AddWithValue("@Lớp", ccb_lop.SelectedValue.ToString()); // cbLop là ComboBox chứa mã lớp
 
                     command.ExecuteNonQuery();
                     MessageBox.Show("Thêm dữ liệu thành công!");
@@ -99,10 +98,10 @@ namespace QuanLySinhVien
         {
             if (data_thongbao.SelectedRows.Count > 0)
             {
-                string ma = data_thongbao.SelectedRows[0].Cells["Ma"].Value.ToString();
+                string ma = data_thongbao.SelectedRows[0].Cells["id"].Value.ToString();
 
                 string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-                string query = "DELETE FROM Thong_Bao WHERE Ma = @Ma";
+                string query = "DELETE FROM Thông_Báo WHERE id = @id";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -110,9 +109,8 @@ namespace QuanLySinhVien
                     {
                         connection.Open();
                         SqlCommand command = new SqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@Ma", ma);
+                        command.Parameters.AddWithValue("@id", ma);
                         command.ExecuteNonQuery();
-
                         MessageBox.Show("Xóa dữ liệu thành công!");
                         LoadDataToGridView(); // làm mới danh sách
                     }
@@ -141,9 +139,62 @@ namespace QuanLySinhVien
 
         private void ThongBao_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'quanLySinhVienDataSet2.Thông_Tin_Lớp_Học' table. You can move, or remove it, as needed.
+            this.thông_Tin_Lớp_HọcTableAdapter.Fill(this.quanLySinhVienDataSet2.Thông_Tin_Lớp_Học);
             // TODO: This line of code loads data into the 'quanLySinhVienDataSet.LopHoc' table. You can move, or remove it, as needed.
             //this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
 
         }
+
+        private void SearchByClass(string className)
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+            string query = @"SELECT 
+            tb.id,
+            lh.Tên_Lớp AS Lớp,
+            tb.Tiêu_Đề,
+            tb.Nội_Dung,
+            tb.Mức_Độ
+            FROM Thông_Báo tb
+            JOIN Thông_Tin_Lớp_Học lh ON tb.Lớp = lh.ID
+            WHERE lh.Tên_Lớp LIKE @ClassName";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@ClassName", "%" + className + "%");
+
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    data_thongbao.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
+
+        // Sự kiện click cho nút tìm kiếm
+     
+
+        private void btn_timkiem_Click(object sender, EventArgs e)
+        {
+            string searchText = txtBox_TImKiemTHongBao.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                LoadDataToGridView(); // Nếu textbox rỗng thì load toàn bộ
+            }
+            else
+            {
+                SearchByClass(searchText); // Nếu có nội dung thì tìm kiếm
+            }
+        }
+       
     }
 }
