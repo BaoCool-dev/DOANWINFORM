@@ -112,6 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLySinhVienDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySinhVienDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySinhVienDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +250,17 @@
     </None>
     <None Include="QuanLySinhVienDataSet1.xss">
       <DependentUpon>QuanLySinhVienDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySinhVienDataSet2.xsc">
+      <DependentUpon>QuanLySinhVienDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySinhVienDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLySinhVienDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLySinhVienDataSet2.xss">
+      <DependentUpon>QuanLySinhVienDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Resources\zoom_4823194.png" />
   </ItemGroup>
