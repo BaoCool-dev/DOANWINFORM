@@ -16,12 +16,9 @@ namespace QuanLySinhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new login());
+            Application.Run(new login());
             //Application.Run(new Messenger("002", "001"));
-            Application.Run(new FormSinhVien("SV003"));
-
-
-
+            //Application.Run(new FormSinhVien("SV003"));
         }
     }
 }

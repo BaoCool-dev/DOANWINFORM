@@ -59,14 +59,24 @@ namespace QuanLySinhVien
 
         private void btn_ThongTinGiangVien_Sinhvien_Click(object sender, EventArgs e)
         {
-            container(new ThongTinCaNhan_SinhVien());
+            container(new ThongTinCaNhan_SinhVien(mssv));
             labelinfor_Sinhvien.Text = "Thông tin cá nhân";
+            //container(new test());
+
         }
 
         private void btn_Khac_Click(object sender, EventArgs e)
         {
             container(new Khac());
             labelinfor_Sinhvien.Text = "Các mục khác";
+        }
+
+        private void btn_Exit_Sinhvien_Click(object sender, EventArgs e)
+        {
+            login login = new login();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -15,6 +15,18 @@ namespace QuanLySinhVien
         public test()
         {
             InitializeComponent();
+            // Bật DoubleBuffer cho chính form
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+            this.UpdateStyles();
+
+            // Bật DoubleBuffer cho tableLayoutPanel1 nếu không null
+            if (tableLayoutPanel1 != null)
+            {
+                var prop = typeof(Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                prop?.SetValue(tableLayoutPanel1, true);
+            }
+
         }
+
     }
 }

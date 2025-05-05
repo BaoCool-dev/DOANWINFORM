@@ -78,6 +78,7 @@
             this.btn_TimKiemTKBSinhVien.Size = new System.Drawing.Size(128, 44);
             this.btn_TimKiemTKBSinhVien.TabIndex = 6;
             this.btn_TimKiemTKBSinhVien.Text = "Tìm kiếm";
+            this.btn_TimKiemTKBSinhVien.Click += new System.EventHandler(this.btn_TimKiemTKBSinhVien_Click);
             // 
             // cb_HocKyTKBSinhVien
             // 

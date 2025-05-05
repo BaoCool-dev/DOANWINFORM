@@ -22,7 +22,7 @@ namespace QuanLySinhVien
         }
         private void LoadThoiKhoaBieu()
         {
-            string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=QuanLySinhVien;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -130,7 +130,7 @@ namespace QuanLySinhVien
 
             List<string> distinctBuoi = new List<string>
             {
-                "Sáng", "Chiều"
+                "Sáng", "Chiều","Tối"
             };
 
             foreach (var buoi in distinctBuoi)
@@ -154,6 +154,11 @@ namespace QuanLySinhVien
             }
 
             return pivot;
+        }
+
+        private void btn_TimKiemTKBSinhVien_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
