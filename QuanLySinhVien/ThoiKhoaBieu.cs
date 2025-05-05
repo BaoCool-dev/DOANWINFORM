@@ -14,6 +14,7 @@ namespace QuanLySinhVien
     public partial class ThoiKhoaBieu : Form
     {
         string position;
+        string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
         public ThoiKhoaBieu(string position)
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace QuanLySinhVien
         }
         private void LoadDataToGridView()
         {
-            string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+            
             //    string query = @"
             //SELECT 
             //    mh.Tên_Môn,
@@ -107,7 +108,7 @@ namespace QuanLySinhVien
 
             try
             {
-                string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+               
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -161,7 +162,7 @@ namespace QuanLySinhVien
             {
                 try
                 {
-                    string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+                    
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
@@ -190,7 +191,7 @@ namespace QuanLySinhVien
         {
             try
             {
-                string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+               
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -280,7 +281,7 @@ namespace QuanLySinhVien
                 return;
             }
 
-            string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+           
             string query = @"
         SELECT * FROM Thông_Tin_Môn_Học 
         WHERE RTRIM(Mã_Môn) = @MaMon";
@@ -332,7 +333,7 @@ namespace QuanLySinhVien
         private void TimKiemMonHoc()
         {
             string maMonCanTim = txtbox_TimKiemMonHoc.Text.Trim();
-            string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+           
             string query = @"
         SELECT 
             mh.Tên_Môn,
@@ -372,7 +373,7 @@ namespace QuanLySinhVien
 
         private bool KiemTraTrungLich(out string message)
         {
-            string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+           
             message = "";
 
             string phong = txt_phong.Text.Trim();
