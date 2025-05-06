@@ -15,6 +15,7 @@ namespace QuanLySinhVien
     {
         string position;
         string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+        //private string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
         public ThoiKhoaBieu(string position)
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace QuanLySinhVien
 
             string query = @"
             SELECT 
+                tkb.id,
                 tkb.Thứ,
                 tkb.Buổi,
                 mh.Tên_Môn,
@@ -72,6 +74,9 @@ namespace QuanLySinhVien
                     ELSE 8
                 END,
                 tkb.Buổi";
+
+            data_thoikhoabieu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data_thoikhoabieu.MultiSelect = false;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -430,5 +435,14 @@ namespace QuanLySinhVien
             return false; // Không trùng lịch
         }
 
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pb_reload_Click(object sender, EventArgs e)
+        {
+            LoadDataToGridView();
+        }
     }
 }

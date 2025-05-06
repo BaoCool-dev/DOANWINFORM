@@ -32,6 +32,7 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.txtbox_TimKiemMonHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.gp_ThoiKhoaBieuGiangVien = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txt_lop = new System.Windows.Forms.TextBox();
             this.pb_timMonHoc = new System.Windows.Forms.PictureBox();
             this.cbbb_Buoi = new System.Windows.Forms.ComboBox();
@@ -53,11 +54,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.data_thoikhoabieu = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pb_reload = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.gp_ThoiKhoaBieuGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_timMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_thoikhoabieu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_reload)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -65,6 +67,7 @@
             this.guna2CustomGradientPanel1.AutoScroll = true;
             this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2CustomGradientPanel1.BorderThickness = 1;
+            this.guna2CustomGradientPanel1.Controls.Add(this.pb_reload);
             this.guna2CustomGradientPanel1.Controls.Add(this.txtbox_TimKiemMonHoc);
             this.guna2CustomGradientPanel1.Controls.Add(this.gp_ThoiKhoaBieuGiangVien);
             this.guna2CustomGradientPanel1.Controls.Add(this.data_thoikhoabieu);
@@ -77,6 +80,7 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1942, 1102);
             this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             // 
             // txtbox_TimKiemMonHoc
             // 
@@ -144,6 +148,16 @@
             this.gp_ThoiKhoaBieuGiangVien.TabIndex = 1;
             this.gp_ThoiKhoaBieuGiangVien.TabStop = false;
             this.gp_ThoiKhoaBieuGiangVien.Text = "TÁC VỤ:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(358, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 30);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Lớp:";
             // 
             // txt_lop
             // 
@@ -230,7 +244,7 @@
             this.btn_clear.FocusedColor = System.Drawing.Color.Transparent;
             this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_clear.ForeColor = System.Drawing.Color.Black;
-            this.btn_clear.Location = new System.Drawing.Point(346, 870);
+            this.btn_clear.Location = new System.Drawing.Point(375, 717);
             this.btn_clear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(161, 45);
@@ -252,7 +266,7 @@
             this.btn_them.FocusedColor = System.Drawing.Color.Transparent;
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_them.ForeColor = System.Drawing.Color.Black;
-            this.btn_them.Location = new System.Drawing.Point(106, 870);
+            this.btn_them.Location = new System.Drawing.Point(72, 717);
             this.btn_them.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(161, 45);
@@ -274,7 +288,7 @@
             this.btn_xoa.FillColor = System.Drawing.Color.White;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_xoa.ForeColor = System.Drawing.Color.Black;
-            this.btn_xoa.Location = new System.Drawing.Point(346, 736);
+            this.btn_xoa.Location = new System.Drawing.Point(72, 818);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(161, 45);
@@ -297,7 +311,7 @@
             this.btn_chinhsua.FocusedColor = System.Drawing.Color.Transparent;
             this.btn_chinhsua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_chinhsua.ForeColor = System.Drawing.Color.Black;
-            this.btn_chinhsua.Location = new System.Drawing.Point(106, 736);
+            this.btn_chinhsua.Location = new System.Drawing.Point(375, 818);
             this.btn_chinhsua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_chinhsua.Name = "btn_chinhsua";
             this.btn_chinhsua.Size = new System.Drawing.Size(161, 45);
@@ -422,15 +436,17 @@
             this.data_thoikhoabieu.TabIndex = 0;
             this.data_thoikhoabieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_thoikhoabieu_CellClick);
             // 
-            // label4
+            // pb_reload
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(358, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 30);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Lớp:";
+            this.pb_reload.BackColor = System.Drawing.Color.Transparent;
+            this.pb_reload.Image = ((System.Drawing.Image)(resources.GetObject("pb_reload.Image")));
+            this.pb_reload.Location = new System.Drawing.Point(1087, 182);
+            this.pb_reload.Name = "pb_reload";
+            this.pb_reload.Size = new System.Drawing.Size(100, 50);
+            this.pb_reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_reload.TabIndex = 2;
+            this.pb_reload.TabStop = false;
+            this.pb_reload.Click += new System.EventHandler(this.pb_reload_Click);
             // 
             // ThoiKhoaBieu
             // 
@@ -448,6 +464,7 @@
             this.gp_ThoiKhoaBieuGiangVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_timMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_thoikhoabieu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_reload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,5 +496,6 @@
         private System.Windows.Forms.PictureBox pb_timMonHoc;
         private System.Windows.Forms.TextBox txt_lop;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pb_reload;
     }
 }
