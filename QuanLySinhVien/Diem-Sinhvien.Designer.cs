@@ -53,8 +53,9 @@
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.DarkOrange;
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.Maroon;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1751, 1002);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1946, 1106);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // btn_XemDiem
@@ -71,11 +72,13 @@
             this.btn_XemDiem.FillColor = System.Drawing.Color.White;
             this.btn_XemDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_XemDiem.ForeColor = System.Drawing.Color.Black;
-            this.btn_XemDiem.Location = new System.Drawing.Point(696, 79);
+            this.btn_XemDiem.Location = new System.Drawing.Point(783, 99);
+            this.btn_XemDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XemDiem.Name = "btn_XemDiem";
-            this.btn_XemDiem.Size = new System.Drawing.Size(128, 44);
+            this.btn_XemDiem.Size = new System.Drawing.Size(144, 55);
             this.btn_XemDiem.TabIndex = 12;
             this.btn_XemDiem.Text = "Tìm kiếm";
+            this.btn_XemDiem.Click += new System.EventHandler(this.btn_XemDiem_Click);
             // 
             // cb_HocKyXemDiem
             // 
@@ -93,9 +96,10 @@
             "I",
             "II",
             "III"});
-            this.cb_HocKyXemDiem.Location = new System.Drawing.Point(543, 79);
+            this.cb_HocKyXemDiem.Location = new System.Drawing.Point(611, 99);
+            this.cb_HocKyXemDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_HocKyXemDiem.Name = "cb_HocKyXemDiem";
-            this.cb_HocKyXemDiem.Size = new System.Drawing.Size(93, 36);
+            this.cb_HocKyXemDiem.Size = new System.Drawing.Size(104, 36);
             this.cb_HocKyXemDiem.TabIndex = 11;
             // 
             // label2
@@ -103,9 +107,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(445, 87);
+            this.label2.Location = new System.Drawing.Point(501, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 28);
+            this.label2.Size = new System.Drawing.Size(90, 32);
             this.label2.TabIndex = 10;
             this.label2.Text = "Kỳ học:";
             // 
@@ -128,9 +132,10 @@
             "2025",
             "2026",
             "2027"});
-            this.cb_NamHocXemDiem.Location = new System.Drawing.Point(211, 79);
+            this.cb_NamHocXemDiem.Location = new System.Drawing.Point(237, 99);
+            this.cb_NamHocXemDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_NamHocXemDiem.Name = "cb_NamHocXemDiem";
-            this.cb_NamHocXemDiem.Size = new System.Drawing.Size(140, 36);
+            this.cb_NamHocXemDiem.Size = new System.Drawing.Size(157, 36);
             this.cb_NamHocXemDiem.TabIndex = 9;
             // 
             // label1
@@ -138,9 +143,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 87);
+            this.label1.Location = new System.Drawing.Point(94, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 28);
+            this.label1.Size = new System.Drawing.Size(116, 32);
             this.label1.TabIndex = 8;
             this.label1.Text = "Năm học:";
             // 
@@ -150,20 +155,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(89, 182);
+            this.dataGridView1.Location = new System.Drawing.Point(100, 228);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1577, 742);
+            this.dataGridView1.Size = new System.Drawing.Size(1750, 782);
             this.dataGridView1.TabIndex = 7;
             // 
             // Diem_Sinhvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1751, 1002);
+            this.ClientSize = new System.Drawing.Size(1946, 1106);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Diem_Sinhvien";
             this.Text = "Diem_Sinhvien";
             this.guna2CustomGradientPanel1.ResumeLayout(false);

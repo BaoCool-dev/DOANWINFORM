@@ -53,7 +53,7 @@ namespace QuanLySinhVien
 
         private void btn_LopCuaBan_Sinhvien_Click(object sender, EventArgs e)
         {
-            container(new Diem_Sinhvien());
+            container(new Diem_Sinhvien(mssv, connectionString));
             labelinfor_Sinhvien.Text = "Điểm của bạn";
         }
 

@@ -87,7 +87,7 @@ namespace QuanLySinhVien
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = false;
+                e.SuppressKeyPress = true;
                 tbPassword.Focus();
             }
         }
@@ -96,7 +96,7 @@ namespace QuanLySinhVien
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = false;
+                e.SuppressKeyPress = true;
                 DangNhap();
             }
         }
@@ -106,8 +106,8 @@ namespace QuanLySinhVien
             string userName = tbUsername.Text.Trim();
             string password = tbPassword.Text.Trim();
 
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            //string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+            //string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+            string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
