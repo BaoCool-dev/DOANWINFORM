@@ -79,9 +79,17 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_ChinSuaAnhSinhVien = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pb_AnhGiangVien = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lbl_Ho_TenThanNhan = new System.Windows.Forms.Label();
+            this.lbl_SDT_ThanNhan = new System.Windows.Forms.Label();
+            this.lbl_QuanHeThanNhan = new System.Windows.Forms.Label();
+            this.lbl_MaGiangVien = new System.Windows.Forms.Label();
+            this.lbl_NamBatDau = new System.Windows.Forms.Label();
+            this.lbl_khoa = new System.Windows.Forms.Label();
+            this.lbl_HocVi = new System.Windows.Forms.Label();
+            this.lbl_ChucVu = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.gb_ThongTinLienLacGiangVien.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -97,7 +105,7 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_AnhGiangVien)).BeginInit();
             this.panel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -320,6 +328,9 @@
             // panel8
             // 
             this.panel8.AutoScroll = true;
+            this.panel8.Controls.Add(this.lbl_QuanHeThanNhan);
+            this.panel8.Controls.Add(this.lbl_SDT_ThanNhan);
+            this.panel8.Controls.Add(this.lbl_Ho_TenThanNhan);
             this.panel8.Controls.Add(this.label17);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.label15);
@@ -378,6 +389,11 @@
             // panel10
             // 
             this.panel10.AutoScroll = true;
+            this.panel10.Controls.Add(this.lbl_ChucVu);
+            this.panel10.Controls.Add(this.lbl_HocVi);
+            this.panel10.Controls.Add(this.lbl_khoa);
+            this.panel10.Controls.Add(this.lbl_NamBatDau);
+            this.panel10.Controls.Add(this.lbl_MaGiangVien);
             this.panel10.Controls.Add(this.label22);
             this.panel10.Controls.Add(this.label21);
             this.panel10.Controls.Add(this.label20);
@@ -644,7 +660,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btn_ChinSuaAnhSinhVien);
-            this.panel2.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel2.Controls.Add(this.pb_AnhGiangVien);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(45, 3);
             this.panel2.Name = "panel2";
@@ -670,21 +686,22 @@
             this.btn_ChinSuaAnhSinhVien.Size = new System.Drawing.Size(180, 45);
             this.btn_ChinSuaAnhSinhVien.TabIndex = 3;
             this.btn_ChinSuaAnhSinhVien.Text = "Chỉnh sửa ảnh";
+            this.btn_ChinSuaAnhSinhVien.Click += new System.EventHandler(this.btn_ChinSuaAnhSinhVien_Click);
             // 
-            // guna2CirclePictureBox1
+            // pb_AnhGiangVien
             // 
-            this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pb_AnhGiangVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::QuanLySinhVien.Properties.Resources.politician_4752641;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 29);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(278, 252);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 2;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.pb_AnhGiangVien.BackColor = System.Drawing.Color.Transparent;
+            this.pb_AnhGiangVien.Image = global::QuanLySinhVien.Properties.Resources.politician_4752641;
+            this.pb_AnhGiangVien.ImageRotate = 0F;
+            this.pb_AnhGiangVien.Location = new System.Drawing.Point(56, 29);
+            this.pb_AnhGiangVien.Name = "pb_AnhGiangVien";
+            this.pb_AnhGiangVien.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pb_AnhGiangVien.Size = new System.Drawing.Size(278, 252);
+            this.pb_AnhGiangVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_AnhGiangVien.TabIndex = 2;
+            this.pb_AnhGiangVien.TabStop = false;
             // 
             // panel3
             // 
@@ -712,6 +729,78 @@
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông Tin cá nhân:";
             this.guna2GroupBox1.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            // 
+            // lbl_Ho_TenThanNhan
+            // 
+            this.lbl_Ho_TenThanNhan.AutoSize = true;
+            this.lbl_Ho_TenThanNhan.Location = new System.Drawing.Point(152, 38);
+            this.lbl_Ho_TenThanNhan.Name = "lbl_Ho_TenThanNhan";
+            this.lbl_Ho_TenThanNhan.Size = new System.Drawing.Size(65, 28);
+            this.lbl_Ho_TenThanNhan.TabIndex = 27;
+            this.lbl_Ho_TenThanNhan.Text = "label7";
+            // 
+            // lbl_SDT_ThanNhan
+            // 
+            this.lbl_SDT_ThanNhan.AutoSize = true;
+            this.lbl_SDT_ThanNhan.Location = new System.Drawing.Point(106, 103);
+            this.lbl_SDT_ThanNhan.Name = "lbl_SDT_ThanNhan";
+            this.lbl_SDT_ThanNhan.Size = new System.Drawing.Size(65, 28);
+            this.lbl_SDT_ThanNhan.TabIndex = 28;
+            this.lbl_SDT_ThanNhan.Text = "label7";
+            // 
+            // lbl_QuanHeThanNhan
+            // 
+            this.lbl_QuanHeThanNhan.AutoSize = true;
+            this.lbl_QuanHeThanNhan.Location = new System.Drawing.Point(223, 167);
+            this.lbl_QuanHeThanNhan.Name = "lbl_QuanHeThanNhan";
+            this.lbl_QuanHeThanNhan.Size = new System.Drawing.Size(65, 28);
+            this.lbl_QuanHeThanNhan.TabIndex = 29;
+            this.lbl_QuanHeThanNhan.Text = "label7";
+            // 
+            // lbl_MaGiangVien
+            // 
+            this.lbl_MaGiangVien.AutoSize = true;
+            this.lbl_MaGiangVien.Location = new System.Drawing.Point(240, 38);
+            this.lbl_MaGiangVien.Name = "lbl_MaGiangVien";
+            this.lbl_MaGiangVien.Size = new System.Drawing.Size(65, 28);
+            this.lbl_MaGiangVien.TabIndex = 27;
+            this.lbl_MaGiangVien.Text = "label7";
+            // 
+            // lbl_NamBatDau
+            // 
+            this.lbl_NamBatDau.AutoSize = true;
+            this.lbl_NamBatDau.Location = new System.Drawing.Point(215, 103);
+            this.lbl_NamBatDau.Name = "lbl_NamBatDau";
+            this.lbl_NamBatDau.Size = new System.Drawing.Size(65, 28);
+            this.lbl_NamBatDau.TabIndex = 28;
+            this.lbl_NamBatDau.Text = "label7";
+            // 
+            // lbl_khoa
+            // 
+            this.lbl_khoa.AutoSize = true;
+            this.lbl_khoa.Location = new System.Drawing.Point(141, 167);
+            this.lbl_khoa.Name = "lbl_khoa";
+            this.lbl_khoa.Size = new System.Drawing.Size(65, 28);
+            this.lbl_khoa.TabIndex = 29;
+            this.lbl_khoa.Text = "label7";
+            // 
+            // lbl_HocVi
+            // 
+            this.lbl_HocVi.AutoSize = true;
+            this.lbl_HocVi.Location = new System.Drawing.Point(153, 231);
+            this.lbl_HocVi.Name = "lbl_HocVi";
+            this.lbl_HocVi.Size = new System.Drawing.Size(65, 28);
+            this.lbl_HocVi.TabIndex = 30;
+            this.lbl_HocVi.Text = "label7";
+            // 
+            // lbl_ChucVu
+            // 
+            this.lbl_ChucVu.AutoSize = true;
+            this.lbl_ChucVu.Location = new System.Drawing.Point(164, 294);
+            this.lbl_ChucVu.Name = "lbl_ChucVu";
+            this.lbl_ChucVu.Size = new System.Drawing.Size(65, 28);
+            this.lbl_ChucVu.TabIndex = 31;
+            this.lbl_ChucVu.Text = "label7";
             // 
             // ThongTin_GiangVien
             // 
@@ -743,7 +832,7 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_AnhGiangVien)).EndInit();
             this.panel3.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -803,8 +892,16 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btn_ChinSuaAnhSinhVien;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pb_AnhGiangVien;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private System.Windows.Forms.Label lbl_QuanHeThanNhan;
+        private System.Windows.Forms.Label lbl_SDT_ThanNhan;
+        private System.Windows.Forms.Label lbl_Ho_TenThanNhan;
+        private System.Windows.Forms.Label lbl_ChucVu;
+        private System.Windows.Forms.Label lbl_HocVi;
+        private System.Windows.Forms.Label lbl_khoa;
+        private System.Windows.Forms.Label lbl_NamBatDau;
+        private System.Windows.Forms.Label lbl_MaGiangVien;
     }
 }

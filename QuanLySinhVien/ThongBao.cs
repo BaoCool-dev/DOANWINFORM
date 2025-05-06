@@ -25,7 +25,7 @@ namespace QuanLySinhVien
             {
                 string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
                 string query = @"SELECT 
-                    tb.id,
+                    tb.STT,
                     lh.Tên_Lớp AS Lớp,
                     tb.Tiêu_Đề,
                     tb.Nội_Dung,
@@ -140,7 +140,7 @@ namespace QuanLySinhVien
         private void ThongBao_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLySinhVienDataSet2.Thông_Tin_Lớp_Học' table. You can move, or remove it, as needed.
-            this.thông_Tin_Lớp_HọcTableAdapter.Fill(this.quanLySinhVienDataSet2.Thông_Tin_Lớp_Học);
+            //this.thông_Tin_Lớp_HọcTableAdapter.Fill(this.quanLySinhVienDataSet2.Thông_Tin_Lớp_Học);
             // TODO: This line of code loads data into the 'quanLySinhVienDataSet.LopHoc' table. You can move, or remove it, as needed.
             //this.lopHocTableAdapter.Fill(this.quanLySinhVienDataSet.LopHoc);
 
@@ -150,7 +150,7 @@ namespace QuanLySinhVien
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
             string query = @"SELECT 
-            tb.id,
+            tb.STT,
             lh.Tên_Lớp AS Lớp,
             tb.Tiêu_Đề,
             tb.Nội_Dung,

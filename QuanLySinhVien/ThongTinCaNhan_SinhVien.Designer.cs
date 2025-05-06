@@ -48,16 +48,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.gb_ThanNhan = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.gp_ChuyenMon = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -79,9 +71,23 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_ChinSuaAnhSinhVien = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pb_AnhSinhVien = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lbl_QuanHeThanNhan = new System.Windows.Forms.Label();
+            this.lbl_SDT_ThanNhan = new System.Windows.Forms.Label();
+            this.lbl_Ho_TenThanNhan = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_ChucVu = new System.Windows.Forms.Label();
+            this.lbl_khoa = new System.Windows.Forms.Label();
+            this.lbl_NamBatDau = new System.Windows.Forms.Label();
+            this.lbl_MaSinhVien = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.gb_ThongTinLienLacGiangVien.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -97,7 +103,7 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_AnhSinhVien)).BeginInit();
             this.panel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -319,6 +325,9 @@
             // panel8
             // 
             this.panel8.AutoScroll = true;
+            this.panel8.Controls.Add(this.lbl_QuanHeThanNhan);
+            this.panel8.Controls.Add(this.lbl_SDT_ThanNhan);
+            this.panel8.Controls.Add(this.lbl_Ho_TenThanNhan);
             this.panel8.Controls.Add(this.label17);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.label15);
@@ -327,33 +336,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(402, 405);
             this.panel8.TabIndex = 0;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(36, 167);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(181, 28);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "Quan hệ thân nhân:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(36, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 28);
-            this.label16.TabIndex = 17;
-            this.label16.Text = "SĐT:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(36, 38);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 28);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Họ và tên:";
             // 
             // gp_ChuyenMon
             // 
@@ -377,8 +359,11 @@
             // panel10
             // 
             this.panel10.AutoScroll = true;
+            this.panel10.Controls.Add(this.lbl_ChucVu);
+            this.panel10.Controls.Add(this.lbl_khoa);
+            this.panel10.Controls.Add(this.lbl_NamBatDau);
+            this.panel10.Controls.Add(this.lbl_MaSinhVien);
             this.panel10.Controls.Add(this.label22);
-            this.panel10.Controls.Add(this.label21);
             this.panel10.Controls.Add(this.label20);
             this.panel10.Controls.Add(this.label19);
             this.panel10.Controls.Add(this.label18);
@@ -387,51 +372,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(563, 405);
             this.panel10.TabIndex = 0;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(55, 294);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 28);
-            this.label22.TabIndex = 17;
-            this.label22.Text = "Chức vụ:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(55, 231);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(71, 28);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Học vị:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(55, 167);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 28);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "Khoa:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(53, 103);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(148, 28);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Bắt đầu  học từ:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(53, 38);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(150, 28);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Mã số sinh viên:";
             // 
             // panel9
             // 
@@ -643,7 +583,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btn_ChinSuaAnhSinhVien);
-            this.panel2.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel2.Controls.Add(this.pb_AnhSinhVien);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(46, 3);
             this.panel2.Name = "panel2";
@@ -669,22 +609,23 @@
             this.btn_ChinSuaAnhSinhVien.Size = new System.Drawing.Size(180, 45);
             this.btn_ChinSuaAnhSinhVien.TabIndex = 3;
             this.btn_ChinSuaAnhSinhVien.Text = "Chỉnh sửa ảnh";
+            this.btn_ChinSuaAnhSinhVien.Click += new System.EventHandler(this.btn_ChinSuaAnhSinhVien_Click);
             // 
-            // guna2CirclePictureBox1
+            // pb_AnhSinhVien
             // 
-            this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pb_AnhSinhVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::QuanLySinhVien.Properties.Resources.student_1154987;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 29);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(286, 274);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 2;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.pb_AnhSinhVien.BackColor = System.Drawing.Color.Transparent;
+            this.pb_AnhSinhVien.Image = global::QuanLySinhVien.Properties.Resources.student_1154987;
+            this.pb_AnhSinhVien.ImageRotate = 0F;
+            this.pb_AnhSinhVien.Location = new System.Drawing.Point(56, 29);
+            this.pb_AnhSinhVien.Name = "pb_AnhSinhVien";
+            this.pb_AnhSinhVien.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pb_AnhSinhVien.Size = new System.Drawing.Size(286, 274);
+            this.pb_AnhSinhVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_AnhSinhVien.TabIndex = 2;
+            this.pb_AnhSinhVien.TabStop = false;
             // 
             // panel3
             // 
@@ -712,6 +653,132 @@
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông Tin cá nhân:";
             this.guna2GroupBox1.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            // 
+            // lbl_QuanHeThanNhan
+            // 
+            this.lbl_QuanHeThanNhan.AutoSize = true;
+            this.lbl_QuanHeThanNhan.Location = new System.Drawing.Point(228, 184);
+            this.lbl_QuanHeThanNhan.Name = "lbl_QuanHeThanNhan";
+            this.lbl_QuanHeThanNhan.Size = new System.Drawing.Size(65, 28);
+            this.lbl_QuanHeThanNhan.TabIndex = 35;
+            this.lbl_QuanHeThanNhan.Text = "label7";
+            // 
+            // lbl_SDT_ThanNhan
+            // 
+            this.lbl_SDT_ThanNhan.AutoSize = true;
+            this.lbl_SDT_ThanNhan.Location = new System.Drawing.Point(111, 120);
+            this.lbl_SDT_ThanNhan.Name = "lbl_SDT_ThanNhan";
+            this.lbl_SDT_ThanNhan.Size = new System.Drawing.Size(65, 28);
+            this.lbl_SDT_ThanNhan.TabIndex = 34;
+            this.lbl_SDT_ThanNhan.Text = "label7";
+            // 
+            // lbl_Ho_TenThanNhan
+            // 
+            this.lbl_Ho_TenThanNhan.AutoSize = true;
+            this.lbl_Ho_TenThanNhan.Location = new System.Drawing.Point(157, 55);
+            this.lbl_Ho_TenThanNhan.Name = "lbl_Ho_TenThanNhan";
+            this.lbl_Ho_TenThanNhan.Size = new System.Drawing.Size(65, 28);
+            this.lbl_Ho_TenThanNhan.TabIndex = 33;
+            this.lbl_Ho_TenThanNhan.Text = "label7";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(41, 184);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(181, 28);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Quan hệ thân nhân:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(41, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 28);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "SĐT:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(41, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 28);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Họ và tên:";
+            // 
+            // lbl_ChucVu
+            // 
+            this.lbl_ChucVu.AutoSize = true;
+            this.lbl_ChucVu.Location = new System.Drawing.Point(164, 251);
+            this.lbl_ChucVu.Name = "lbl_ChucVu";
+            this.lbl_ChucVu.Size = new System.Drawing.Size(65, 28);
+            this.lbl_ChucVu.TabIndex = 41;
+            this.lbl_ChucVu.Text = "label7";
+            // 
+            // lbl_khoa
+            // 
+            this.lbl_khoa.AutoSize = true;
+            this.lbl_khoa.Location = new System.Drawing.Point(141, 184);
+            this.lbl_khoa.Name = "lbl_khoa";
+            this.lbl_khoa.Size = new System.Drawing.Size(65, 28);
+            this.lbl_khoa.TabIndex = 39;
+            this.lbl_khoa.Text = "label7";
+            // 
+            // lbl_NamBatDau
+            // 
+            this.lbl_NamBatDau.AutoSize = true;
+            this.lbl_NamBatDau.Location = new System.Drawing.Point(240, 120);
+            this.lbl_NamBatDau.Name = "lbl_NamBatDau";
+            this.lbl_NamBatDau.Size = new System.Drawing.Size(65, 28);
+            this.lbl_NamBatDau.TabIndex = 38;
+            this.lbl_NamBatDau.Text = "label7";
+            // 
+            // lbl_MaSinhVien
+            // 
+            this.lbl_MaSinhVien.AutoSize = true;
+            this.lbl_MaSinhVien.Location = new System.Drawing.Point(240, 55);
+            this.lbl_MaSinhVien.Name = "lbl_MaSinhVien";
+            this.lbl_MaSinhVien.Size = new System.Drawing.Size(65, 28);
+            this.lbl_MaSinhVien.TabIndex = 37;
+            this.lbl_MaSinhVien.Text = "label7";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(53, 251);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(86, 28);
+            this.label22.TabIndex = 36;
+            this.label22.Text = "Chức vụ:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(55, 184);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(61, 28);
+            this.label20.TabIndex = 34;
+            this.label20.Text = "Khoa:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(53, 120);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(167, 28);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Năm bắt đầu học:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(53, 55);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(165, 28);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "Mã số giảng viên:";
             // 
             // ThongTinCaNhan_SinhVien
             // 
@@ -741,7 +808,7 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_AnhSinhVien)).EndInit();
             this.panel3.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -770,16 +837,8 @@
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2GroupBox gb_ThanNhan;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2GroupBox gp_ChuyenMon;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel4;
@@ -801,8 +860,22 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btn_ChinSuaAnhSinhVien;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pb_AnhSinhVien;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private System.Windows.Forms.Label lbl_QuanHeThanNhan;
+        private System.Windows.Forms.Label lbl_SDT_ThanNhan;
+        private System.Windows.Forms.Label lbl_Ho_TenThanNhan;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_ChucVu;
+        private System.Windows.Forms.Label lbl_khoa;
+        private System.Windows.Forms.Label lbl_NamBatDau;
+        private System.Windows.Forms.Label lbl_MaSinhVien;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }
