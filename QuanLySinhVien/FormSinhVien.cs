@@ -13,12 +13,13 @@ namespace QuanLySinhVien
     public partial class FormSinhVien : Form
     {
         private string mssv;
-        public FormSinhVien(string mssv)
+        string connectionString;
+        public FormSinhVien(string mssv, string connectionString)
         {
             this.mssv = mssv;
+            this.connectionString = connectionString;
             InitializeComponent();
-            container(new Thongbao_sinhvien());
-
+            container(new Thongbao_sinhvien(mssv, connectionString));
         }
 
         private void container(object object_form)
@@ -40,7 +41,7 @@ namespace QuanLySinhVien
         }
         private void btn_ThongBao_Sinhvien_Click(object sender, EventArgs e)
         {
-            container(new Thongbao_sinhvien());
+            container(new Thongbao_sinhvien(mssv, connectionString));
             labelinfor_Sinhvien.Text = "Thông báo";
         }
 
