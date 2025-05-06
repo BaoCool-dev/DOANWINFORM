@@ -59,9 +59,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(112, 176);
+            this.label1.Location = new System.Drawing.Point(126, 220);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 52);
+            this.label1.Size = new System.Drawing.Size(202, 61);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             // 
@@ -70,10 +70,10 @@
             this.panel1.Controls.Add(this.tbUsername);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(11, 236);
+            this.panel1.Location = new System.Drawing.Point(12, 295);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 58);
+            this.panel1.Size = new System.Drawing.Size(430, 72);
             this.panel1.TabIndex = 2;
             // 
             // tbUsername
@@ -81,29 +81,30 @@
             this.tbUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
-            this.tbUsername.Location = new System.Drawing.Point(49, 5);
+            this.tbUsername.Location = new System.Drawing.Point(55, 6);
             this.tbUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(319, 21);
+            this.tbUsername.Size = new System.Drawing.Size(359, 25);
             this.tbUsername.TabIndex = 8;
             this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
+            this.tbUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_usename_keyDown);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.panel2.Location = new System.Drawing.Point(8, 38);
+            this.panel2.Location = new System.Drawing.Point(9, 48);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 1);
+            this.panel2.Size = new System.Drawing.Size(405, 1);
             this.panel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -115,10 +116,10 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(89, 425);
+            this.btnLogin.Location = new System.Drawing.Point(100, 531);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(242, 46);
+            this.btnLogin.Size = new System.Drawing.Size(272, 58);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -130,9 +131,9 @@
             this.lblExit.BackColor = System.Drawing.Color.White;
             this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.lblExit.Location = new System.Drawing.Point(178, 494);
+            this.lblExit.Location = new System.Drawing.Point(200, 618);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(56, 29);
+            this.lblExit.Size = new System.Drawing.Size(66, 32);
             this.lblExit.TabIndex = 5;
             this.lblExit.Text = "Exit";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -145,9 +146,9 @@
             this.lblClearField.BackColor = System.Drawing.Color.White;
             this.lblClearField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClearField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.lblClearField.Location = new System.Drawing.Point(282, 386);
+            this.lblClearField.Location = new System.Drawing.Point(317, 482);
             this.lblClearField.Name = "lblClearField";
-            this.lblClearField.Size = new System.Drawing.Size(106, 20);
+            this.lblClearField.Size = new System.Drawing.Size(121, 25);
             this.lblClearField.TabIndex = 6;
             this.lblClearField.Text = "Clear fields";
             this.lblClearField.Click += new System.EventHandler(this.lblClearField_Click);
@@ -159,10 +160,10 @@
             this.panel3.Controls.Add(this.tbPassword);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.pbLock);
-            this.panel3.Location = new System.Drawing.Point(11, 307);
+            this.panel3.Location = new System.Drawing.Point(12, 384);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(382, 58);
+            this.panel3.Size = new System.Drawing.Size(430, 72);
             this.panel3.TabIndex = 7;
             // 
             // tbPassword
@@ -170,29 +171,30 @@
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
-            this.tbPassword.Location = new System.Drawing.Point(49, 7);
+            this.tbPassword.Location = new System.Drawing.Point(55, 9);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(319, 21);
+            this.tbPassword.Size = new System.Drawing.Size(359, 25);
             this.tbPassword.TabIndex = 9;
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_keyDown);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.panel4.Location = new System.Drawing.Point(8, 38);
+            this.panel4.Location = new System.Drawing.Point(9, 48);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(360, 1);
+            this.panel4.Size = new System.Drawing.Size(405, 1);
             this.panel4.TabIndex = 3;
             // 
             // pbLock
             // 
             this.pbLock.Image = global::QuanLySinhVien.Properties.Resources._lock;
-            this.pbLock.Location = new System.Drawing.Point(8, 0);
+            this.pbLock.Location = new System.Drawing.Point(9, 0);
             this.pbLock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbLock.Name = "pbLock";
-            this.pbLock.Size = new System.Drawing.Size(36, 33);
+            this.pbLock.Size = new System.Drawing.Size(40, 41);
             this.pbLock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLock.TabIndex = 1;
             this.pbLock.TabStop = false;
@@ -202,10 +204,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::QuanLySinhVien.Properties.Resources.circle_49_164_255;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(391, 151);
+            this.pictureBox2.Size = new System.Drawing.Size(440, 189);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -214,10 +216,10 @@
             // 
             this.pbUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
             this.pbUser.Image = global::QuanLySinhVien.Properties.Resources.ChatGPT_Image_Apr_30__2025__07_21_55_PM_removebg_preview;
-            this.pbUser.Location = new System.Drawing.Point(148, 34);
+            this.pbUser.Location = new System.Drawing.Point(166, 42);
             this.pbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(116, 101);
+            this.pbUser.Size = new System.Drawing.Size(130, 126);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUser.TabIndex = 9;
             this.pbUser.TabStop = false;
@@ -236,10 +238,10 @@
             // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(427, 549);
+            this.ClientSize = new System.Drawing.Size(480, 686);
             this.Controls.Add(this.pbUser);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel3);

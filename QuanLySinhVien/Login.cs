@@ -20,58 +20,7 @@ namespace QuanLySinhVien
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userName = tbUsername.Text.Trim();
-            string password = tbPassword.Text.Trim();
-
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT COUNT(*)  FROM login WHERE user_ = @user AND pass_ = @pass";
-                    
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    
-                    cmd.Parameters.AddWithValue("@user", userName);
-                    cmd.Parameters.AddWithValue("@pass", password);
-
-                    int count = (int)cmd.ExecuteScalar();
-                    if (count > 0)
-                    {
-                        string query_position = "SELECT ID FROM login WHERE user_ = @user AND pass_ = @pass";
-                        SqlCommand cmd1 = new SqlCommand(query_position, conn);
-                        cmd1.Parameters.AddWithValue("@user", userName);
-                        cmd1.Parameters.AddWithValue("@pass", password);
-                        string position = (string)cmd1.ExecuteScalar();
-                        if (position.StartsWith("GV"))
-                        {
-                            Form1 form1 = new Form1(position);
-                            this.Hide();
-                            form1.ShowDialog();
-                            this.Close();
-                        }
-                        else
-                        {
-                            FormSinhVien form1 = new FormSinhVien(position);
-                            this.Hide();
-                            form1.ShowDialog();
-                            this.Close();
-                        }
-
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi kết nối: " + ex.Message);
-                }
-            }
+            DangNhap();
         }
 
         private void lblExit_Click(object sender, EventArgs e)
@@ -132,6 +81,81 @@ namespace QuanLySinhVien
         private void login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tb_usename_keyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = false;
+                tbPassword.Focus();
+            }
+        }
+
+        private void tbPassword_keyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = false;
+                DangNhap();
+            }
+        }
+
+        private void DangNhap()
+        {
+            string userName = tbUsername.Text.Trim();
+            string password = tbPassword.Text.Trim();
+
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+            //string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*)  FROM login WHERE user_ = @user AND pass_ = @pass";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@user", userName);
+                    cmd.Parameters.AddWithValue("@pass", password);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        string query_position = "SELECT ID FROM login WHERE user_ = @user AND pass_ = @pass";
+                        SqlCommand cmd1 = new SqlCommand(query_position, conn);
+                        cmd1.Parameters.AddWithValue("@user", userName);
+                        cmd1.Parameters.AddWithValue("@pass", password);
+                        string position = (string)cmd1.ExecuteScalar();
+                        if (position.StartsWith("GV"))
+                        {
+                            Form1 form1 = new Form1(position);
+                            this.Hide();
+                            form1.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            FormSinhVien form1 = new FormSinhVien(position);
+                            this.Hide();
+                            form1.ShowDialog();
+                            this.Close();
+                        }
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối: " + ex.Message);
+                }
+            }
         }
     }
 }
