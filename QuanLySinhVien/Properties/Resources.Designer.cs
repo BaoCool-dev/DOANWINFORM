@@ -143,6 +143,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exchange_4051968 {
+            get {
+                object obj = ResourceManager.GetObject("exchange_4051968", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap id_card_6850785 {
             get {
                 object obj = ResourceManager.GetObject("id-card_6850785", resourceCulture);
@@ -246,6 +256,16 @@ namespace QuanLySinhVien.Properties {
         internal static System.Drawing.Bitmap tool_16205471 {
             get {
                 object obj = ResourceManager.GetObject("tool_16205471", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tool_16205471_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("tool_16205471-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
