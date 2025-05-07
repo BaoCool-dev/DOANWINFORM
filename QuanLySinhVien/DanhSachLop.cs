@@ -421,6 +421,7 @@ namespace QuanLySinhVien
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Messenger message = new Messenger(MaGiangVien, txt_MaSinhVien.Text);
+            message.ShowDialog();
         }
     }
 }

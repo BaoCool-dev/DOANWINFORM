@@ -45,7 +45,7 @@ namespace QuanLySinhVien
                     conn.Open();
                     string query = @"
                 SELECT Người_Gửi, Người_Nhận, Nội_Dung, Thời_Gian 
-                FROM Messages
+                FROM Messagers
                 WHERE (Người_Gửi = @sender_id AND Người_Nhận = @receiver_id)
                    OR (Người_Gửi = @receiver_id AND Người_Nhận = @sender_id)
                 ORDER BY Thời_Gian";

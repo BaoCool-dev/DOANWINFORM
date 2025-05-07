@@ -30,7 +30,7 @@ namespace QuanLySinhVien
                 conn.Open();
                 string query = @"SELECT 
                         gv.Họ_và_Tên, gv.Ngày_Sinh, gv.Quê_Quán, gv.Giới_Tính, gv.CCCD, 
-                        gv.Tôn_Giáo, gv.Quốc_Tịch, gv.Lớp, gv.Hình_Ảnh,
+                        gv.Tôn_Giáo, gv.Quốc_Tịch, gv.Hình_Ảnh,
                         ll.Tỉnh, ll.Huyện, ll.Xã, ll.SDT, ll.Email_Trường, ll.Email_Cá_Nhân,
                         tn.Tên_Thân_Nhân , tn.Quan_Hệ_Thân_Nhân, tn.SDT,
                         cm.Năm_Bắt_Đầu, cm.Khoa, cm.Học_Vị, cm.Chức_Vụ
