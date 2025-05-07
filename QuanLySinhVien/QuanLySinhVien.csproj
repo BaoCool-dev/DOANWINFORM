@@ -333,5 +333,11 @@
   <ItemGroup>
     <None Include="Resources\exchange_4051968.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\momo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietcombank.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

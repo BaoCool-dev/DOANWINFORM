@@ -97,11 +97,246 @@ namespace QuanLySinhVien
                 }
             }
         }
-
-
-        private void btn_them_Click(object sender, EventArgs e)
+        private void data_bangdiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = data_bangdiem.Rows[e.RowIndex];
 
+                txt_Hoten.Text = row.Cells["Họ_và_Tên"].Value?.ToString();
+                txt_MaSinhVien.Text = row.Cells["Mã"].Value?.ToString();
+                txt_Lop.Text = row.Cells["Lớp"].Value?.ToString();
+                txtDiemGK.Text = row.Cells["ĐiểmGK"].Value?.ToString();
+                txtDiemCK.Text = row.Cells["ĐiểmCK"].Value?.ToString();
+            }
+        }
+
+        private void btn_KiemTra_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_timkiem_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+            string maSinhVien = txtBox_TImKiemDanhSachLop.Text.Trim(); // textbox để nhập mã cần tìm
+
+            if (string.IsNullOrEmpty(maSinhVien))
+            {
+                MessageBox.Show("Vui lòng nhập mã sinh viên để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = $@"
+            SELECT 
+                d.MonHoc,
+                d.Mã,
+                sv.Họ_và_Tên,
+                sv.Ngày_Sinh,
+                sv.Giới_Tính,
+                sv.Lớp,
+                d.ĐiểmGK,
+                d.ĐiểmCK
+            FROM 
+                Bảng_Điểm_Chung d
+            INNER JOIN 
+                Thông_Tin_Sinh_Viên sv ON d.Mã = sv.Mã_Sinh_Viên
+            WHERE 
+                d.Mã = @MaSV and d.MonHoc = @MaMon";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaSV", maSinhVien);
+                    cmd.Parameters.AddWithValue("@MaMon", MaMonHoc);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        data_bangdiem.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy sinh viên với mã đã nhập!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        data_bangdiem.DataSource = null;
+                    }
+                }
+            }
+        }
+
+        private void btn_refesh_Click(object sender, EventArgs e)
+        {
+            LoadDataToGridView();
+        }
+
+        private void btn_KiemTra_Click_1(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                                SELECT 
+                                    sv.Họ_và_Tên,
+                                    sv.Lớp
+                                FROM 
+                                    Thông_Tin_Sinh_Viên sv
+                                WHERE 
+                                    sv.Mã_Sinh_Viên = @MSSV";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MSSV", txt_MaSinhVien.Text);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            txt_Hoten.Text = reader["Họ_và_Tên"].ToString();
+                            txt_Lop.Text = reader["Lớp"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy sinh viên với mã này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txt_Hoten.Clear();
+                            txt_Lop.Clear();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btn_chinhsua_Click_1(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+
+            string maSinhVien = txt_MaSinhVien.Text.Trim();
+            string strDiemGK = txtDiemGK.Text.Trim();
+            string strDiemCK = txtDiemCK.Text.Trim();
+
+            // Kiểm tra rỗng
+            if (!float.TryParse(txtDiemGK.Text.Trim(), out float diemGK) || diemGK < 0 || diemGK > 10 ||
+                !float.TryParse(txtDiemCK.Text.Trim(), out float diemCK) || diemCK < 0 || diemCK > 10)
+            {
+                MessageBox.Show("Vui lòng nhập đúng điểm (từ 0 đến 10) cho cả Giữa kỳ và Cuối kỳ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // Xác định tên bảng điểm theo mã môn học
+            string tenBang = "";
+            switch (MaMonHoc)
+            {
+                case "MH001": tenBang = "Bảng_Điểm_TRR"; break;
+                case "MH002": tenBang = "Bảng_Điểm_LTW"; break;
+                case "MH003": tenBang = "Bảng_Điểm_KTMT"; break;
+                case "MH004": tenBang = "Bảng_Điểm_KTLT"; break;
+                case "MH005": tenBang = "Bảng_Điểm_TTNT"; break;
+                default:
+                    MessageBox.Show("Mã môn học không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $@"
+                        UPDATE {tenBang}
+                        SET ĐiểmGK = @DiemGK, ĐiểmCK = @DiemCK
+                        WHERE Mã = @MaSV";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@DiemGK", diemGK);
+                    cmd.Parameters.AddWithValue("@DiemCK", diemCK);
+                    cmd.Parameters.AddWithValue("@MaSV", maSinhVien);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Cập nhật điểm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDataToGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy sinh viên để cập nhật!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
+        private void btn_xoa_Click_1(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+
+            string maSinhVien = txt_MaSinhVien.Text.Trim();
+
+            // Xác định tên bảng gốc dựa vào mã môn học
+            string tenBang = "";
+            switch (MaMonHoc)
+            {
+                case "MH001":
+                    tenBang = "Bảng_Điểm_TRR";
+                    break;
+                case "MH002":
+                    tenBang = "Bảng_Điểm_LTW";
+                    break;
+                case "MH003":
+                    tenBang = "Bảng_Điểm_KTMT";
+                    break;
+                case "MH004":
+                    tenBang = "Bảng_Điểm_KTLT";
+                    break;
+                case "MH005":
+                    tenBang = "Bảng_Điểm_TTNT";
+                    break;
+                default:
+                    MessageBox.Show("Mã môn học không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa sinh viên này khỏi bảng điểm không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = $@"
+                            DELETE FROM {tenBang}
+                            WHERE Mã = @MaSV";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaSV", maSinhVien);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDataToGridView(); // Cập nhật lại giao diện
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy sinh viên để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btn_them_Click_1(object sender, EventArgs e)
+        {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
 
             string maSinhVien = txt_MaSinhVien.Text.Trim();
@@ -176,130 +411,7 @@ namespace QuanLySinhVien
             }
         }
 
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-
-            string maSinhVien = txt_MaSinhVien.Text.Trim();
-
-            // Xác định tên bảng gốc dựa vào mã môn học
-            string tenBang = "";
-            switch (MaMonHoc)
-            {
-                case "MH001":
-                    tenBang = "Bảng_Điểm_TRR";
-                    break;
-                case "MH002":
-                    tenBang = "Bảng_Điểm_LTW";
-                    break;
-                case "MH003":
-                    tenBang = "Bảng_Điểm_KTMT";
-                    break;
-                case "MH004":
-                    tenBang = "Bảng_Điểm_KTLT";
-                    break;
-                case "MH005":
-                    tenBang = "Bảng_Điểm_TTNT";
-                    break;
-                default:
-                    MessageBox.Show("Mã môn học không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-            }
-
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa sinh viên này khỏi bảng điểm không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string query = $@"
-                            DELETE FROM {tenBang}
-                            WHERE Mã = @MaSV";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MaSV", maSinhVien);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadDataToGridView(); // Cập nhật lại giao diện
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy sinh viên để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void btn_chinhsua_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-
-            string maSinhVien = txt_MaSinhVien.Text.Trim();
-            string strDiemGK = txtDiemGK.Text.Trim();
-            string strDiemCK = txtDiemCK.Text.Trim();
-
-            // Kiểm tra rỗng
-            if (!float.TryParse(txtDiemGK.Text.Trim(), out float diemGK) || diemGK < 0 || diemGK > 10 ||
-                !float.TryParse(txtDiemCK.Text.Trim(), out float diemCK) || diemCK < 0 || diemCK > 10)
-            {
-                MessageBox.Show("Vui lòng nhập đúng điểm (từ 0 đến 10) cho cả Giữa kỳ và Cuối kỳ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            // Xác định tên bảng điểm theo mã môn học
-            string tenBang = "";
-            switch (MaMonHoc)
-            {
-                case "MH001": tenBang = "Bảng_Điểm_TRR"; break;
-                case "MH002": tenBang = "Bảng_Điểm_LTW"; break;
-                case "MH003": tenBang = "Bảng_Điểm_KTMT"; break;
-                case "MH004": tenBang = "Bảng_Điểm_KTLT"; break;
-                case "MH005": tenBang = "Bảng_Điểm_TTNT"; break;
-                default:
-                    MessageBox.Show("Mã môn học không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-
-                string query = $@"
-                        UPDATE {tenBang}
-                        SET ĐiểmGK = @DiemGK, ĐiểmCK = @DiemCK
-                        WHERE Mã = @MaSV";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@DiemGK", diemGK);
-                    cmd.Parameters.AddWithValue("@DiemCK", diemCK);
-                    cmd.Parameters.AddWithValue("@MaSV", maSinhVien);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Cập nhật điểm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadDataToGridView();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy sinh viên để cập nhật!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-        }
-
-        private void btn_clear_Click(object sender, EventArgs e)
+        private void btn_clear_Click_1(object sender, EventArgs e)
         {
             txt_Hoten.Clear();
             txt_MaSinhVien.Clear();
@@ -308,117 +420,7 @@ namespace QuanLySinhVien
             txtDiemCK.Clear();
         }
 
-        private void data_bangdiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = data_bangdiem.Rows[e.RowIndex];
-
-                txt_Hoten.Text = row.Cells["Họ_và_Tên"].Value?.ToString();
-                txt_MaSinhVien.Text = row.Cells["Mã"].Value?.ToString();
-                txt_Lop.Text = row.Cells["Lớp"].Value?.ToString();
-                txtDiemGK.Text = row.Cells["ĐiểmGK"].Value?.ToString();
-                txtDiemCK.Text = row.Cells["ĐiểmCK"].Value?.ToString();
-            }
-        }
-
-        private void btn_KiemTra_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-
-                string query = @"
-                                SELECT 
-                                    sv.Họ_và_Tên,
-                                    sv.Lớp
-                                FROM 
-                                    Thông_Tin_Sinh_Viên sv
-                                WHERE 
-                                    sv.Mã_Sinh_Viên = @MSSV";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@MSSV", txt_MaSinhVien.Text);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            txt_Hoten.Text = reader["Họ_và_Tên"].ToString();
-                            txt_Lop.Text = reader["Lớp"].ToString();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy sinh viên với mã này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txt_Hoten.Clear();
-                            txt_Lop.Clear();
-                        }
-                    }
-                }
-            }
-        }
-
-        private void btn_timkiem_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string maSinhVien = txtBox_TImKiemDanhSachLop.Text.Trim(); // textbox để nhập mã cần tìm
-
-            if (string.IsNullOrEmpty(maSinhVien))
-            {
-                MessageBox.Show("Vui lòng nhập mã sinh viên để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = $@"
-            SELECT 
-                d.MonHoc,
-                d.Mã,
-                sv.Họ_và_Tên,
-                sv.Ngày_Sinh,
-                sv.Giới_Tính,
-                sv.Lớp,
-                d.ĐiểmGK,
-                d.ĐiểmCK
-            FROM 
-                Bảng_Điểm_Chung d
-            INNER JOIN 
-                Thông_Tin_Sinh_Viên sv ON d.Mã = sv.Mã_Sinh_Viên
-            WHERE 
-                d.Mã = @MaSV and d.MonHoc = @MaMon";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@MaSV", maSinhVien);
-                    cmd.Parameters.AddWithValue("@MaMon", MaMonHoc);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        data_bangdiem.DataSource = dt;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy sinh viên với mã đã nhập!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        data_bangdiem.DataSource = null;
-                    }
-                }
-            }
-        }
-
-        private void btn_refesh_Click(object sender, EventArgs e)
-        {
-            LoadDataToGridView();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_Chat_Click(object sender, EventArgs e)
         {
             Messenger message = new Messenger(MaGiangVien, txt_MaSinhVien.Text);
             message.ShowDialog();

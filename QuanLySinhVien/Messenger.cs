@@ -181,7 +181,7 @@ namespace QuanLySinhVien
                 {
                     conn.Open();
                     string query = @"
-                INSERT INTO Messages (Người_Gửi, Người_Nhận, Nội_Dung, Thời_Gian)
+                INSERT INTO Messagers (Người_Gửi, Người_Nhận, Nội_Dung, Thời_Gian)
                 VALUES (@SenderId, @ReceiverId, @MessageText, @SentAt)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
