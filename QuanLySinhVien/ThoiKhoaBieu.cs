@@ -14,8 +14,8 @@ namespace QuanLySinhVien
     public partial class ThoiKhoaBieu : Form
     {
         string position;
-        //string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-        private string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+        string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+        //private string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
         public ThoiKhoaBieu(string position)
         {
             InitializeComponent();
