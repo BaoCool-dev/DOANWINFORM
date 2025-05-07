@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThoiKhoaBieu));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pb_reload = new System.Windows.Forms.PictureBox();
             this.txtbox_TimKiemMonHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.gp_ThoiKhoaBieuGiangVien = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,12 +55,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.data_thoikhoabieu = new System.Windows.Forms.DataGridView();
-            this.pb_reload = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_reload)).BeginInit();
             this.gp_ThoiKhoaBieuGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_timMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_thoikhoabieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_reload)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -81,6 +81,18 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1942, 1102);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
+            // 
+            // pb_reload
+            // 
+            this.pb_reload.BackColor = System.Drawing.Color.Transparent;
+            this.pb_reload.Image = ((System.Drawing.Image)(resources.GetObject("pb_reload.Image")));
+            this.pb_reload.Location = new System.Drawing.Point(1087, 182);
+            this.pb_reload.Name = "pb_reload";
+            this.pb_reload.Size = new System.Drawing.Size(100, 50);
+            this.pb_reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_reload.TabIndex = 2;
+            this.pb_reload.TabStop = false;
+            this.pb_reload.Click += new System.EventHandler(this.pb_reload_Click);
             // 
             // txtbox_TimKiemMonHoc
             // 
@@ -436,18 +448,6 @@
             this.data_thoikhoabieu.TabIndex = 0;
             this.data_thoikhoabieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_thoikhoabieu_CellClick);
             // 
-            // pb_reload
-            // 
-            this.pb_reload.BackColor = System.Drawing.Color.Transparent;
-            this.pb_reload.Image = ((System.Drawing.Image)(resources.GetObject("pb_reload.Image")));
-            this.pb_reload.Location = new System.Drawing.Point(1087, 182);
-            this.pb_reload.Name = "pb_reload";
-            this.pb_reload.Size = new System.Drawing.Size(100, 50);
-            this.pb_reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_reload.TabIndex = 2;
-            this.pb_reload.TabStop = false;
-            this.pb_reload.Click += new System.EventHandler(this.pb_reload_Click);
-            // 
             // ThoiKhoaBieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -460,11 +460,11 @@
             this.Text = "ThoiKhoaBieu";
             this.Load += new System.EventHandler(this.ThoiKhoaBieu_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_reload)).EndInit();
             this.gp_ThoiKhoaBieuGiangVien.ResumeLayout(false);
             this.gp_ThoiKhoaBieuGiangVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_timMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_thoikhoabieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_reload)).EndInit();
             this.ResumeLayout(false);
 
         }

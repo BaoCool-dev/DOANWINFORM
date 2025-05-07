@@ -14,14 +14,59 @@ namespace QuanLySinhVien
     public partial class ThoiKhoaBieu : Form
     {
         string position;
-        string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-        //private string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
+        //string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
+        private string connectionString = @"Server=localhost\SQLEXPRESS;Database=QuanLySinhVien;Trusted_Connection=True;";
         public ThoiKhoaBieu(string position)
         {
             InitializeComponent();
             this.position = position;
             LoadDataToGridView();
-            
+            StyleDataGridView();
+        }
+        private void StyleDataGridView()
+        {
+            // 1. Bật tự co dãn cột cho vừa khung
+            //data_thoikhoabieu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // 2. Ẩn dòng chỉ số hàng (row header) nếu không cần
+            data_thoikhoabieu.RowHeadersVisible = false;
+
+            // 3. Thiết lập font chung, kích thước và padding
+            var baseFont = new Font("Segoe UI", 9F);
+            data_thoikhoabieu.DefaultCellStyle.Font = baseFont;
+            data_thoikhoabieu.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            data_thoikhoabieu.DefaultCellStyle.Padding = new Padding(4, 2, 4, 2);
+
+            // 4. Căn giữa nội dung số
+            //data_thoikhoabieu.Columns["ĐiểmGK"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //data_thoikhoabieu.Columns["ĐiểmCK"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //data_thoikhoabieu.Columns["DiemTB"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //data_thoikhoabieu.Columns["Số tín chỉ"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // 5. Màu xen kẽ cho hàng (zebra striping)
+            data_thoikhoabieu.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+
+            // 6. Màu background chung và màu lưới
+            data_thoikhoabieu.BackgroundColor = Color.White;
+            data_thoikhoabieu.GridColor = Color.LightGray;
+
+            // 7. Tô màu header và căn giữa
+            data_thoikhoabieu.EnableHeadersVisualStyles = false;
+            data_thoikhoabieu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255);
+            data_thoikhoabieu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            data_thoikhoabieu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // 8. Màu khi chọn
+            data_thoikhoabieu.DefaultCellStyle.SelectionBackColor = Color.FromArgb(135, 206, 250);
+            data_thoikhoabieu.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // 9. Tăng chiều cao hàng để dễ đọc
+            data_thoikhoabieu.RowTemplate.Height = 40;
+
+            // 10. Chặn người dùng chỉnh sửa trực tiếp ở lưới
+            data_thoikhoabieu.ReadOnly = true;
+            data_thoikhoabieu.AllowUserToAddRows = false;
+            data_thoikhoabieu.AllowUserToDeleteRows = false;
         }
         private DataRow GetSelectedRow()
         {
@@ -32,6 +77,7 @@ namespace QuanLySinhVien
             }
             return null;
         }
+
         private void LoadDataToGridView()
         {
             
@@ -110,7 +156,12 @@ namespace QuanLySinhVien
                 MessageBox.Show("Vui lòng chọn một dòng để sửa!");
                 return;
             }
-
+            string message;
+            if (KiemTraTrungLich(out message, Convert.ToInt32(selectedRow["ID"])))
+            {
+                MessageBox.Show(message);
+                return;
+            }
             try
             {
                
@@ -220,7 +271,7 @@ namespace QuanLySinhVien
                     cmd.Parameters.AddWithValue("@Buoi", cbbb_Buoi.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@HinhThuc", cbb_hinhthuc.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@ChuY", txt_mota.Text);
-                    //cmd.Parameters.AddWithValue("@Lop", txt_lop.Text);
+                    cmd.Parameters.AddWithValue("@Lop", txt_lop.Text);
 
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
@@ -376,9 +427,8 @@ namespace QuanLySinhVien
             }
         }
 
-        private bool KiemTraTrungLich(out string message)
+        private bool KiemTraTrungLich(out string message, int? excludeId = null)
         {
-           
             message = "";
 
             string phong = txt_phong.Text.Trim();
@@ -391,49 +441,68 @@ namespace QuanLySinhVien
                 conn.Open();
 
                 // Kiểm tra trùng phòng
-                string query1 = @"SELECT * FROM Thời_Khóa_Biểu 
-                          WHERE Phòng = @Phong AND Thứ = @Thu AND Buổi = @Buoi";
+                string query1 = @"
+            SELECT * FROM Thời_Khóa_Biểu 
+            WHERE Phòng = @Phong AND Thứ = @Thu AND Buổi = @Buoi";
+
+                if (excludeId.HasValue)
+                {
+                    query1 += " AND ID != @ExcludeID";
+                }
 
                 using (SqlCommand cmd1 = new SqlCommand(query1, conn))
                 {
                     cmd1.Parameters.AddWithValue("@Phong", phong);
                     cmd1.Parameters.AddWithValue("@Thu", thu);
                     cmd1.Parameters.AddWithValue("@Buoi", buoi);
+                    if (excludeId.HasValue)
+                        cmd1.Parameters.AddWithValue("@ExcludeID", excludeId.Value);
 
-                    SqlDataReader reader = cmd1.ExecuteReader();
-                    if (reader.HasRows)
+                    using (SqlDataReader reader = cmd1.ExecuteReader())
                     {
-                        message = $"Phòng {phong}, thứ {thu}, buổi {buoi} đã được đăng ký trước.";
-                        return true;
+                        if (reader.HasRows)
+                        {
+                            message = $"Phòng {phong}, thứ {thu}, buổi {buoi} đã được đăng ký trước.";
+                            return true;
+                        }
                     }
-                    reader.Close();
                 }
 
                 // Kiểm tra giáo viên có lịch dạy cùng lúc
-                string query2 = @"SELECT mh.Tên_Môn, tkb.Phòng FROM Thời_Khóa_Biểu tkb
-                          JOIN Thông_Tin_Môn_Học mh ON tkb.Môn_Học = mh.Mã_Môn
-                          WHERE tkb.Thứ = @Thu AND tkb.Buổi = @Buoi AND mh.Mã_Giáo_Viên = @MaGV";
+                string query2 = @"
+            SELECT mh.Tên_Môn, tkb.Phòng FROM Thời_Khóa_Biểu tkb
+            JOIN Thông_Tin_Môn_Học mh ON tkb.Môn_Học = mh.Mã_Môn
+            WHERE tkb.Thứ = @Thu AND tkb.Buổi = @Buoi AND mh.Mã_Giáo_Viên = @MaGV";
+
+                if (excludeId.HasValue)
+                {
+                    query2 += " AND tkb.ID != @ExcludeID";
+                }
 
                 using (SqlCommand cmd2 = new SqlCommand(query2, conn))
                 {
                     cmd2.Parameters.AddWithValue("@Thu", thu);
                     cmd2.Parameters.AddWithValue("@Buoi", buoi);
                     cmd2.Parameters.AddWithValue("@MaGV", position);
+                    if (excludeId.HasValue)
+                        cmd2.Parameters.AddWithValue("@ExcludeID", excludeId.Value);
 
-                    SqlDataReader reader2 = cmd2.ExecuteReader();
-                    if (reader2.Read())
+                    using (SqlDataReader reader2 = cmd2.ExecuteReader())
                     {
-                        string tenMon = reader2["Tên_Môn"].ToString().Trim();
-                        string phongDangDay = reader2["Phòng"].ToString().Trim();
-                        message = $"Thứ {thu}, buổi {buoi}, bạn đã có lịch dạy môn \"{tenMon}\" tại phòng {phongDangDay}.";
-                        return true;
+                        if (reader2.Read())
+                        {
+                            string tenMon = reader2["Tên_Môn"].ToString().Trim();
+                            string phongDangDay = reader2["Phòng"].ToString().Trim();
+                            message = $"Thứ {thu}, buổi {buoi}, bạn đã có lịch dạy môn \"{tenMon}\" tại phòng {phongDangDay}.";
+                            return true;
+                        }
                     }
-                    reader2.Close();
                 }
             }
 
-            return false; // Không trùng lịch
+            return false; // Không trùng
         }
+
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
