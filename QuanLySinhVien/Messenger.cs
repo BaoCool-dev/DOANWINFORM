@@ -104,7 +104,7 @@ namespace QuanLySinhVien
         }
         private string EditMessage(string input)
         {
-            string firstPart = input.Substring(0, Math.Min(16, input.Length)).Trim();
+            string firstPart = input.Substring(0, Math.Min(13, input.Length)).Trim();
 
             string secondPart = input.Length > 16 ? input.Substring(21).Trim() : string.Empty;
             int count = 0;
