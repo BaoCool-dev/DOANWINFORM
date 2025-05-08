@@ -210,7 +210,7 @@ namespace QuanLySinhVien
             string query = "SELECT Họ_và_Tên, Hình_Ảnh FROM Thông_Tin_Sinh_Viên WHERE Mã_Sinh_Viên = @id";
             if (!flag)
             {
-                query = "SELECT Họ_và_Tên, Hình_Ảnh FROM Thông_Tin_Giang_Viên WHERE Mã_Giảng_Viên = @id";
+                query = "SELECT Họ_và_Tên, Hình_Ảnh FROM Thông_Tin_Giảng_Viên WHERE Mã_Giảng_Viên = @id";
             }
 
             try
