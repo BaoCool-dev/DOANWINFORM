@@ -121,8 +121,8 @@
   <data name="id-card_6850785" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\id-card_6850785.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="politician_475264" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\politician_475264.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exchange_4051968" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exchange_4051968.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="presentation_5364589" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\presentation_5364589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +154,9 @@
   <data name="social-learning_4233528" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\social-learning_4233528.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="student_1154987" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student_1154987.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom_4823194" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom_4823194.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,8 +166,8 @@
   <data name="circle_49_164_255" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circle_49_164_255.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usercut1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usercut1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usercut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usercut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,19 +175,28 @@
   <data name="ChatGPT_Image_Apr_30__2025__07_22_30_PM-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT_Image_Apr_30__2025__07_22_30_PM-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="student_1154987" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student_1154987.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="engagement_17643682" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engagement_17643682.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="politician_475264" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\politician_475264.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="presentation_18816942" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\presentation_18816942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="engagement_17643682" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\engagement_17643682.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tool_16205471-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tool_16205471-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tool_16205471" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tool_16205471.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usercut1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usercut1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="momo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\momo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vietcombank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vietcombank.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

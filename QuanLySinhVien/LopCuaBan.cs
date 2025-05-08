@@ -17,8 +17,9 @@ namespace QuanLySinhVien
         public LopCuaBan(string position)
         {
             InitializeComponent();
-            LoadDataToGridView();
             this.position = position;
+            LoadDataToGridView();
+
         }
         private void container(object object_form)
         {
@@ -41,14 +42,21 @@ namespace QuanLySinhVien
         private void LoadDataToGridView()
         {
             string connectionString = "Data Source=localhost;Initial Catalog=QuanLySinhVien;Persist Security Info=True;User ID=sa;Password=chibao";
-            string query = @"SELECT * From Thông_Tin_Lớp_Học";
-          
+            string query = @"SELECT 
+                    Mã_Môn, Tên_Môn, Số_tín_chỉ
+                 FROM Thông_Tin_Môn_Học
+                 WHERE Mã_Giáo_Viên = @MaGV";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@MaGV", position);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
@@ -64,14 +72,10 @@ namespace QuanLySinhVien
 
         private void data_LopCuaBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string MaLop;
-            if (e.RowIndex >= 0) // Kiểm tra không phải header
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = data_LopCuaBan.Rows[e.RowIndex];
-
-                // Ví dụ: lấy dữ liệu cột 0
-                MaLop = row.Cells[0].Value.ToString();
-                container(new DanhSachLop(MaLop,position));
+                string tenMon = data_LopCuaBan.Rows[e.RowIndex].Cells["Mã_Môn"].Value.ToString();
+                container(new DanhSachLop(tenMon, position, position));
             }
         }
 

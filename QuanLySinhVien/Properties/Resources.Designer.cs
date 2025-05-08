@@ -143,6 +143,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exchange_4051968 {
+            get {
+                object obj = ResourceManager.GetObject("exchange_4051968", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap id_card_6850785 {
             get {
                 object obj = ResourceManager.GetObject("id-card_6850785", resourceCulture);
@@ -156,6 +166,16 @@ namespace QuanLySinhVien.Properties {
         internal static System.Drawing.Bitmap left_arrow_3272431 {
             get {
                 object obj = ResourceManager.GetObject("left-arrow_3272431", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap momo {
+            get {
+                object obj = ResourceManager.GetObject("momo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +273,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tool_16205471_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("tool_16205471-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unlock__3_ {
             get {
                 object obj = ResourceManager.GetObject("unlock (3)", resourceCulture);
@@ -276,6 +306,16 @@ namespace QuanLySinhVien.Properties {
         internal static System.Drawing.Bitmap usercut1 {
             get {
                 object obj = ResourceManager.GetObject("usercut1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vietcombank {
+            get {
+                object obj = ResourceManager.GetObject("vietcombank", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

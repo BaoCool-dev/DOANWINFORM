@@ -68,7 +68,7 @@ namespace QuanLySinhVien
 
         private void btn_Khac_Click(object sender, EventArgs e)
         {
-            container(new Khac());
+            container(new Khac(mssv));
             labelinfor_Sinhvien.Text = "Các mục khác";
         }
 
